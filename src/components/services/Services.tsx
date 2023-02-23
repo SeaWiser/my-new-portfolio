@@ -4,7 +4,7 @@ import './services.css';
 class Services extends Component {
   render() {
     return (
-      <div>Services</div>
+      <section id="services">Services</section>
     );
   }
 }
