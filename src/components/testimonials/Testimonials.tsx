@@ -4,7 +4,7 @@ import './testimonials.css';
 class Testimonials extends Component {
   render() {
     return (
-      <div>Testimonials</div>
+      <section id="testimonials">Testimonials</section>
     );
   }
 }
