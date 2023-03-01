@@ -43,14 +43,15 @@ header {
 .me {
   background: linear-gradient(var(--color-primary), transparent);
   width: 22rem;
-  height: 30rem;
+  height: 25rem; /* réduire la hauteur */
   position: absolute;
   left: calc(50% - 11rem);
-  margin-top: 4rem;
+  margin-top: 2rem; /* réduire la marge supérieure */
   border-radius: 12rem 12rem 0 0;
   overflow: hidden;
   padding: 5rem 1.5rem 1.5rem 1.5rem;
 }
+
 
 /* ----------- SCROLL DOWN ----------- */
 
@@ -81,5 +82,11 @@ header {
   .header__socials,
   .scroll__down {
     display: none;
+  }
+}
+
+@media screen and (max-width: 307px) {
+  header {
+    padding-top: 2rem;
   }
 }
