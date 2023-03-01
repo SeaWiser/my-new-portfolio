@@ -1,13 +1,18 @@
 import React, { Component } from 'react';
 import './header.css';
 import CTA from "./CTA";
-import ME from '../../assets/me.png';
+import ME from '../../assets/me-transparent.png';
 import HeaderSocials from "./HeaderSocials";
+import { Toaster } from "react-hot-toast";
 
 class Header extends Component {
   render() {
     return (
-      <header>
+      <header id="home">
+        <Toaster
+          position="top-center"
+          reverseOrder={false}
+        />
         <div className="container header__container">
           <h5>Hello I'm</h5>
           <h1>Yanis Graillot</h1>
