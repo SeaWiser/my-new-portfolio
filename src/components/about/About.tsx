@@ -28,7 +28,7 @@ class About extends Component {
               <article className="about__card">
                 <FiUsers className="about__icon"/>
                 <h5>Clients</h5>
-                <small>200+ Worldwide</small>
+                <small>5+ Worldwide</small>
               </article>
               <article className="about__card">
                 <VscFolderLibrary className="about__icon"/>
@@ -38,9 +38,9 @@ class About extends Component {
             </div>
 
             <p>
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Atque doloribus in nesciunt. Alias esse
-              incidunt praesentium sequi suscipit tempore. Accusantium aliquid aperiam dolores iure laboriosam possimus
-              quidem sint unde vel!
+              I am a full stack web developer with 4 years of experience, specializing in front-end development with
+              Angular, Vue, and React, as well as back-end development with Php/Symfony and Node.js/Express. I am
+              passionate about creating innovative, performant, and scalable web applications.
             </p>
 
             <a href={"#contact"} className="btn btn-primary">Let's talk</a>
