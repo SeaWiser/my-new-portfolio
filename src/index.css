@@ -18,6 +18,12 @@
   --color-white: #fff;
   --color-light: rgba(255, 255, 255, 0.6);
 
+  --color-success: #10cc52;
+  --color-success-variant: rgba(16, 204, 82, 0.4);
+
+  --color-danger: #ff4d4d;
+  --color-danger-variant: rgba(255, 77, 77, 0.4);
+
   --transition: all 400ms ease;
 
   --container-width-lg: 75%;
