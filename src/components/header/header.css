@@ -10,6 +10,12 @@ header {
   position: relative;
 }
 
+.my_logo {
+  width: 50px;
+  height: auto;
+  margin: 0 auto 2.5rem;
+}
+
 /* ----------- CTA ----------- */
 
 .cta {
@@ -36,6 +42,8 @@ header {
   width: 1px;
   height: 2rem;
   background: var(--color-primary);
+  animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
+  animation-duration: 1s; /* don't forget to set a duration! */
 }
 
 /* ----------- ME ----------- */
@@ -59,16 +67,20 @@ header {
   position: absolute;
   right: -2.3rem;
   bottom: 5rem;
-  transform: rotate(90deg);
+  animation-duration: 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  animation-name: rotate90;
   font-weight: 300;
   font-size: 0.9rem;
 }
 
-/* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
-
-@media screen and (max-width: 1024px) {
-  header {
-    height: 68vh;
+@keyframes rotate90 {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(90deg);
   }
 }
 

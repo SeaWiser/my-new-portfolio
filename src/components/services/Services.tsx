@@ -1,16 +1,40 @@
 import React, { Component } from 'react';
 import './services.css';
 import { BiCheck } from "react-icons/bi";
+import Block from "../shared/Block";
 
-class Services extends Component {
+interface ServicesProps {
+  isMobile: boolean
+}
+
+class Services extends Component<{}, ServicesProps> {
+  constructor(props: ServicesProps) {
+    super(props);
+    this.state = {
+      isMobile: window.innerWidth < 600
+    };
+  }
+
+  componentDidMount() {
+    window.addEventListener('resize', () => {
+      this.setState({
+        isMobile: window.innerWidth < 600
+      });
+    }, false);
+  }
+
   render() {
     return (
-      <section id="services">
-        <h5>What I Offer</h5>
-        <h2>Services</h2>
+      <section id="services" className={this.state.isMobile ? 'mobile' : ''}>
+        <Block className="animate__fadeInLeft">
+          <h5>What I Offer</h5>
+        </Block>
+        <Block className="animate__fadeInRight">
+          <h2>Services</h2>
+        </Block>
 
         <div className="container services__container">
-          <article className="service">
+          <Block className="service animate__fadeInLeft" useArticle={true}>
             <div className="service__head">
               <h3>Front-End Development</h3>
             </div>
@@ -59,8 +83,9 @@ class Services extends Component {
                 <p>Document design choices and features to facilitate future modifications.</p>
               </li>
             </ul>
-          </article>
-          <article className="service">
+          </Block>
+
+          <Block className={"service " + (this.state.isMobile ? 'animate__fadeInRight' : 'animate__fadeInUp')} useArticle={true}>
             <div className="service__head">
               <h3>Back-End Development</h3>
             </div>
@@ -110,8 +135,9 @@ class Services extends Component {
                 <p>Document the application architecture to facilitate future modifications</p>
               </li>
             </ul>
-          </article>
-          <article className="service">
+          </Block>
+
+          <Block className={"service " + (this.state.isMobile ? 'animate__fadeInLeft' : 'animate__fadeInRight')} useArticle={true}>
             <div className="service__head">
               <h3>Project Management</h3>
             </div>
@@ -160,7 +186,7 @@ class Services extends Component {
                 <p>Document the project to facilitate future maintenance and updates</p>
               </li>
             </ul>
-          </article>
+          </Block>
         </div>
       </section>
     );

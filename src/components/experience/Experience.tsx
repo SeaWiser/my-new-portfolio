@@ -1,16 +1,22 @@
 import React, { Component } from 'react';
 import './experience.css';
-import {BsPatchCheckFill} from "react-icons/bs";
+import { BsPatchCheckFill } from "react-icons/bs";
+import 'animate.css';
+import Block from "../shared/Block";
 
 class Experience extends Component {
   render() {
     return (
       <section id="experience">
-        <h5>What Skills I Have</h5>
-        <h2>My Experience</h2>
+        <Block className="animate__fadeInLeft">
+          <h5>What Skills I Have</h5>
+        </Block>
+        <Block className="animate__fadeInRight">
+          <h2>My Experience</h2>
+        </Block>
 
         <div className="container experience__container">
-          <div className="experience__frontend">
+          <Block className="experience__frontend__backend animate__fadeInLeft">
             <h3>Frontend Development</h3>
             <div className="experience__content">
               <article className="experience__details">
@@ -59,7 +65,7 @@ class Experience extends Component {
                 <BsPatchCheckFill className="experience__details-icon"/>
                 <div>
                   <h4>React</h4>
-                  <small className="text-light">Basic</small>
+                  <small className="text-light">Intermediate</small>
                 </div>
               </article>
               <article className="experience__details">
@@ -70,8 +76,8 @@ class Experience extends Component {
                 </div>
               </article>
             </div>
-          </div>
-          <div className="experience__frontend">
+          </Block>
+          <Block className="experience__frontend__backend animate__fadeInRight">
             <h3>Backend Development</h3>
             <div className="experience__content">
               <article className="experience__details">
@@ -105,6 +111,13 @@ class Experience extends Component {
               <article className="experience__details">
                 <BsPatchCheckFill className="experience__details-icon"/>
                 <div>
+                  <h4>Laravel</h4>
+                  <small className="text-light">Basic</small>
+                </div>
+              </article>
+              <article className="experience__details">
+                <BsPatchCheckFill className="experience__details-icon"/>
+                <div>
                   <h4>SQL</h4>
                   <small className="text-light">Experienced</small>
                 </div>
@@ -124,7 +137,7 @@ class Experience extends Component {
                 </div>
               </article>
             </div>
-          </div>
+          </Block>
         </div>
       </section>
     );
