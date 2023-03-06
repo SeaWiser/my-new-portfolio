@@ -6,10 +6,16 @@ import { BsWhatsapp } from "react-icons/bs";
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 import { ContactState } from "../../models/contact-form/contact-state";
 import { toast } from "react-hot-toast";
+import Block from "../shared/Block";
 
 class Contact extends Component<{}, ContactState> {
   private countdownInterval: NodeJS.Timeout | null = null;
   private waitTime = 120000;
+  private readonly nameMinLength = 2;
+  private readonly nameMaxLength = 50;
+  private readonly emailMaxLength = 100;
+  private readonly messageMinLength = 10;
+  private readonly messageMaxLength = 400;
 
   constructor(props: ContactState) {
     super(props);
@@ -125,15 +131,20 @@ class Contact extends Component<{}, ContactState> {
     switch (fieldName) {
       case 'email':
         emailValid = !!(value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i));
-        fieldValidationErrors.email = !value ? (emailValid ? '' : 'Email is required') : (emailValid ? '' : 'Email is invalid');
+        fieldValidationErrors.email = !value ? 'Email is required' : (emailValid ? (value.length > this.emailMaxLength ?
+          `Email is too long (max ${this.emailMaxLength} characters)` : '') : 'Email is invalid');
         break;
       case 'name':
-        nameValid = !!(value && value.length >= 6);
-        fieldValidationErrors.name = !value ? (nameValid ? '' : 'Name is required') : (nameValid ? '' : 'Name is too short');
+        nameValid = !!(value && value.length >= this.nameMinLength && value.length <= this.nameMaxLength);
+        fieldValidationErrors.name = !value ?
+          (nameValid ? '' : `Name is required`)
+          : (nameValid ? '' : `Name should be between ${this.nameMinLength} and ${this.nameMaxLength} characters`);
         break;
       case 'message':
-        messageValid = !!(value && value.length <= 200);
-        fieldValidationErrors.message = !value ? (messageValid ? '' : 'Message is required') : (messageValid ? '' : 'Message is too long');
+        messageValid = !!(value && value.length >= this.messageMinLength && value.length <= this.messageMaxLength);
+        fieldValidationErrors.message = !value ?
+          (messageValid ? '' : `Message is required`)
+          : (messageValid ? '' : `Message should be between ${this.messageMinLength} and ${this.messageMaxLength} characters`);
         break;
       default:
         break;
@@ -155,39 +166,39 @@ class Contact extends Component<{}, ContactState> {
     return (error.length === 0 ? '' : 'has-error');
   }
 
-  toastButton() {
-    toast.error("This didn't work.")
-  }
-
   render() {
     return (
       <section id="contact">
-        <h5>Get In Touch</h5>
-        <h2>Contact Me</h2>
+        <Block className="animate__fadeInLeft">
+          <h5>Get In Touch</h5>
+        </Block>
+        <Block className="animate__fadeInRight">
+          <h2>Contact Me</h2>
+        </Block>
 
         <div className="container contact__container">
           <div className="contact__options">
-            <article className="contact__option">
+            <Block className="contact__option animate__jackInTheBox" useArticle={true}>
               <MdOutlineEmail className="contact__option-icon"/>
               <h4>Email</h4>
               <h5>graillot.yanis@gmail.com</h5>
               <a href="mailto:graillot.yanis@gmail.com" rel="noreferrer" target="_blank">Send a message</a>
-            </article>
-            <article className="contact__option">
+            </Block>
+            <Block className="contact__option animate__jackInTheBox" useArticle={true}>
               <RiMessengerLine className="contact__option-icon"/>
               <h4>Messenger</h4>
               <h5>Yanis Graillot</h5>
               <a href="https://m.me/100090831364043" rel="noreferrer" target="_blank">Send a message</a>
-            </article>
-            <article className="contact__option">
+            </Block>
+            <Block className="contact__option animate__jackInTheBox" useArticle={true}>
               <BsWhatsapp className="contact__option-icon"/>
               <h4>WhatsApp</h4>
               <h5>+33698588270</h5>
               <a href="https://api.whatsapp.com/send?phone+33698588270">Send a message</a>
-            </article>
+            </Block>
           </div>
           <form onSubmit={this.handleSubmit.bind(this)}>
-            <div className="form-group">
+            <Block className="form-group animate__fadeInDown">
               {this.state.formErrors.name && (
                 <span className="error-message">{this.state.formErrors.name}</span>
               )}
@@ -195,26 +206,29 @@ class Contact extends Component<{}, ContactState> {
                      placeholder="Your Full Name"
                      className={this.errorClass(this.state.formErrors.name)}
                      required/>
-            </div>
-            <div className="form-group">
+            </Block>
+            <Block className="form-group animate__fadeInRight">
               {this.state.formErrors.email && (
                 <span className="error-message">{this.state.formErrors.email}</span>
               )}
               <input type="text" value={this.state.email} onChange={(event) => this.handleChange(event)} name="email"
                      className={this.errorClass(this.state.formErrors.email)}
                      placeholder="Your Email" required/>
-            </div>
-            <div className="form-group">
+            </Block>
+            <Block className="form-group animate__fadeInUp">
               {this.state.formErrors.message && (
                 <span className="error-message">{this.state.formErrors.message}</span>
               )}
               <textarea name="message" value={this.state.message} onChange={(event) => this.handleChange(event)}
                         className={this.errorClass(this.state.formErrors.message)}
                         rows={7} placeholder="Your Message" required></textarea>
-            </div>
-            <button type="submit" className="btn btn-primary submit-btn"
-                    disabled={!this.state.formValid || this.state.isSubmitting}>Send Message
-            </button>
+            </Block>
+            <Block className="animate__fadeInUpBig">
+              <button type="submit" className="btn btn-primary submit-btn"
+                      disabled={!this.state.formValid || this.state.isSubmitting}>
+                Send Message
+              </button>
+            </Block>
           </form>
         </div>
       </section>
