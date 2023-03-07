@@ -200,16 +200,16 @@ class Contact extends Component<{}, ContactState> {
           <form onSubmit={this.handleSubmit.bind(this)}>
             <Block className="form-group animate__fadeInDown">
               {this.state.formErrors.name && (
-                <span className="error-message">{this.state.formErrors.name}</span>
+                <span className={`error-message animate__animated ${this.state.formErrors.name ? 'animate__fadeIn' : 'animate__fadeOut'}`}>{this.state.formErrors.name}</span>
               )}
               <input type="text" value={this.state.name} onChange={(event) => this.handleChange(event)} name="name"
                      placeholder="Your Full Name"
-                     className={this.errorClass(this.state.formErrors.name)}
+                     className={`${this.state.formErrors.name && this.errorClass(this.state.formErrors.name) + ' animate__animated animate__fadeIn'}`}
                      required/>
             </Block>
             <Block className="form-group animate__fadeInRight">
               {this.state.formErrors.email && (
-                <span className="error-message">{this.state.formErrors.email}</span>
+                <span className={`error-message animate__animated ${this.state.formErrors.email ? 'animate__fadeIn' : 'animate__fadeOut'}`}>{this.state.formErrors.email}</span>
               )}
               <input type="text" value={this.state.email} onChange={(event) => this.handleChange(event)} name="email"
                      className={this.errorClass(this.state.formErrors.email)}
@@ -217,7 +217,7 @@ class Contact extends Component<{}, ContactState> {
             </Block>
             <Block className="form-group animate__fadeInUp">
               {this.state.formErrors.message && (
-                <span className="error-message">{this.state.formErrors.message}</span>
+                <span className={`error-message animate__animated ${this.state.formErrors.message ? 'animate__fadeIn' : 'animate__fadeOut'}`}>{this.state.formErrors.message}</span>
               )}
               <textarea name="message" value={this.state.message} onChange={(event) => this.handleChange(event)}
                         className={this.errorClass(this.state.formErrors.message)}

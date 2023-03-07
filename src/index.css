@@ -45,6 +45,7 @@ body {
   color: var(--color-white);
   line-height: 1.7;
   background-image: url(../src/assets/bg-texture.png);
+  max-width: 100%;
 }
 
 /* ---------------------- GENERAL STYLES ---------------------- */
@@ -137,10 +138,6 @@ img {
 /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
 
 @media screen and (max-width: 600px) {
-  #home {
-    padding-top: 5rem;
-  }
-
   .container {
     width: var(--container-width-sm);
   }

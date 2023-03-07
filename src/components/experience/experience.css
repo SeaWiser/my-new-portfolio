@@ -70,3 +70,17 @@
     padding: 2rem 1rem;
   }
 }
+
+/* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
+
+@media screen and (max-width: 392px) {
+  .experience__container .experience__frontend__backend h3 {
+    margin-bottom: 1rem;
+  }
+
+  .experience__content {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(8, 1fr);
+    row-gap: 1rem;
+  }
+}

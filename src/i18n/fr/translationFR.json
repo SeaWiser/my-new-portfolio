@@ -1,0 +1,124 @@
+{
+  "title": "Bienvenue {{name}}, à React en utilisant react-i18next de manière totalement sûre",
+  "talk": "Parlons-en",
+  "front_end": "Développement Front-End",
+  "back_end": "Développement Back-End",
+  "description": {
+    "part1": "Ceci est un exemple simple.",
+    "part2": "😉"
+  },
+  "header": {
+    "title": "Bonjour, je suis",
+    "job": "Développeur Fullstack",
+    "download_cv": "Télécharger CV",
+    "scroll_down": "Descendre"
+  },
+  "about": {
+    "subtitle": "Faisons connaissance",
+    "title": "À propos de moi",
+    "experience_title": "Expérience",
+    "experience_description": "{{years}}+ Années d'Expérience",
+    "clients_title": "Clients",
+    "clients_description": "{{clients}}+ Partout dans le Monde",
+    "projects_title": "Projets",
+    "projects_description": "{{projects}}+ Réalisés",
+    "description": "Je suis un développeur web Full Stack avec 4 ans d'expérience, spécialisé dans le développement Front-End avec Angular, Vue et React, ainsi que le développement Back-End avec Php/Symfony et Node.js/Express. Je suis passionné par la création d'applications web innovantes, performantes et évolutives."
+  },
+  "experience": {
+    "subtitle": "Mes Compétences",
+    "title": "Mon Expérience",
+    "basic": "Basique",
+    "intermediate": "Intermédiaire",
+    "experienced": "Expérimenté"
+  },
+  "services": {
+    "subtitle": "Ce que je propose",
+    "title": "Services",
+    "project_management": "Gestion de projet",
+    "front_end_skill_1": "Concevoir la structure et la mise en page de l'interface utilisateur",
+    "front_end_skill_2": "Développer l'interface utilisateur en utilisant des langages de balisage tels que HTML, CSS et JavaScript",
+    "front_end_skill_3": "Optimiser l'interface utilisateur pour une expérience utilisateur efficace et conviviale",
+    "front_end_skill_4": "Intégrer des bibliothèques et des frameworks tels que Angular, Vue et React",
+    "front_end_skill_5": "Effectuer des tests de compatibilité avec différents navigateurs et résolutions d'écran",
+    "front_end_skill_6": "Assurer la cohérence de l'interface utilisateur avec l'identité de la marque",
+    "front_end_skill_7": "Documenter les choix de conception et les fonctionnalités pour faciliter les modifications futures",
+
+    "back_end_skill_1": "Analyse des besoins fonctionnels du client pour le développement d'applications",
+    "back_end_skill_2": "Conception de la structure de la base de données pour stocker les données de l'application",
+    "back_end_skill_3": "Développement de la fonctionnalité côté serveur en utilisant des langages de programmation tels que PHP et Javascript avec Node JS",
+    "back_end_skill_4": "Assurer la sécurité des données en mettant en place des mesures de protection des données et des pare-feu",
+    "back_end_skill_5": "Réalisation de tests de performance pour garantir que l'application est rapide et réactive",
+    "back_end_skill_6": "Déploiement de l'application sur un serveur en ligne",
+    "back_end_skill_7": "Documenter l'architecture de l'application pour faciliter les modifications futures",
+
+    "project_management_skill_1": "Planification et organisation des tâches de projet, y compris les délais et les ressources requises",
+    "project_management_skill_2": "Établissement d'un calendrier de livraison et de jalons pour le projet",
+    "project_management_skill_3": "Communication avec le client tout au long du projet pour garantir la satisfaction",
+    "project_management_skill_4": "Gestion des risques et des problèmes du projet",
+    "project_management_skill_5": "Assurer la coordination entre les membres de l'équipe de développement et les autres parties prenantes",
+    "project_management_skill_6": "Surveillance de l'avancement du projet et ajustements si nécessaire",
+    "project_management_skill_7": "Documenter le projet pour faciliter la maintenance et les mises à jour futures"
+  },
+  "background": {
+    "school_experience_title_1": "Développeur Web-Intégrateur (Esecad & OpenClassrooms)",
+    "school_experience_subtitle_1": "Cours en ligne",
+    "school_experience_description_1": "Apprentissage à distance du développement web pour maîtriser les bases des langages HTML, CSS et PHP.",
+    "school_experience_date_1": "2018 - 2019",
+
+    "work_experience_title_2": "Stage de Développeur Web",
+    "work_experience_subtitle_2": "Lyon, France",
+    "work_experience_description_2": "Dans un environnement nécessitant l'utilisation du langage PHP, du CMS Wordpress et de la méthodologie agile, j'ai assisté les développeurs avec diverses tâches et réunions.",
+    "work_experience_date_2": "Avril 2019 - Mai 2019",
+
+    "school_experience_title_3": "Développeur Web et Mobile (WebForce3)",
+    "school_experience_subtitle_3": "Lyon, France",
+    "school_experience_description_3": "Formation intensive en présentiel. Étude de tous les concepts essentiels pour développer une application web en utilisant différentes technologies, en commençant par le front-end, le back-end, Wordpress et le design web réactif.",
+    "school_experience_date_3": "2019 - 2020",
+
+    "diploma_experience_title_4": "Diplôme de Niveau Licence",
+    "diploma_experience_subtitle_4": "Lyon, France",
+    "diploma_experience_description_4": "Obtention des certifications CNCP en Techniques d'intégration web No. 1447 & Techniques de développement web No. 1448 en développement web et mobile (équivalent à un diplôme de niveau licence).",
+
+    "school_experience_title_5": "Développeur PHP/Symfony",
+    "school_experience_subtitle_5": "Cours en ligne",
+    "school_experience_description_5": "Formation à distance en Back-End pour approfondir les compétences actuelles en PHP dans les domaines de la POO et modélisation, puis l'apprentissage du framework Symfony.",
+    "school_experience_date_5": "2020 - 2021",
+
+    "work_experience_title_6": "Développeur Web Fullstack",
+    "work_experience_subtitle_6": "Lyon, France",
+    "work_experience_description_6": "Rôle de développeur au sein de l'équipe Web Factory utilisant Angular & Node.JS/Express pour maintenir et résoudre des bugs & développer de nouvelles fonctionnalités pour le site web CRM intranet de l'entreprise. \nProcessus de développement basé sur la méthodologie AGILE. Dans ce contexte, mon rôle était également d'assister aux réunions quotidiennes, de planification de sprint, d'examen de sprint et de rétrospective de sprint pour faciliter le développement et traiter divers problèmes.",
+    "work_experience_date_6": "2021 - 2022",
+
+    "work_experience_title_7": "Développeur Web Fullstack",
+    "work_experience_subtitle_7": "Lyon, France",
+    "work_experience_description_7": "Développement d'applications web en utilisant les technologies Angular, Vue, React, PHP et Laravel pour plusieurs clients :\n- Développement de nouvelles fonctionnalités\n- Maintenance et résolution de bugs\n- Répondre aux exigences à travers des maquettes et des spécifications techniques.",
+    "work_experience_date_7": "2022 - 2023"
+  },
+  "contact": {
+    "subtitle": "Entrez en contact",
+    "title": "Contactez-moi",
+    "send_message": "Envoyer un message",
+    "form_full_name": "Votre nom complet",
+    "form_email": "Votre adresse e-mail",
+    "form_message": "Votre message",
+    "form_send_message": "Envoyer le message",
+    "errors": {
+      "name_required": "Le nom est obligatoire",
+      "name_invalid": "Le nom doit contenir entre {{minLength}} et {{maxLength}} caractères",
+      "email_required": "L'adresse e-mail est obligatoire",
+      "email_invalid": "L'adresse e-mail est invalide",
+      "email_too_long": "L'adresse e-mail est trop longue (max {{maxLength}} caractères)",
+      "message_required": "Le message est obligatoire",
+      "message_invalid": "Le message doit contenir entre {{minLength}} et {{maxLength}} caractères"
+    }
+  },
+  "footer": {
+    "home": "Accueil",
+    "about": "À propos",
+    "experience": "Expérience",
+    "services": "Services",
+    "background": "Parcours",
+    "contact": "Contact",
+    "copyrights": "© Yanis GRAILLOT. Tous droits réservés."
+  }
+}

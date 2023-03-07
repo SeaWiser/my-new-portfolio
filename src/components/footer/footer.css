@@ -11,10 +11,13 @@
  }
 
  .footer__logo {
-   display: inline-block;
-   font-size: 2rem;
-   font-weight: 500;
    margin-bottom: 2rem;
+ }
+
+ .footer__logo img {
+   height: auto;
+   max-width: 15rem;
+   margin: 0 auto;
  }
 
  .permalinks {

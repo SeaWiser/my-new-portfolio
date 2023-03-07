@@ -113,3 +113,12 @@
     margin: 1.5rem 0;
   }
 }
+
+/* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
+
+@media screen and (max-width: 320px) {
+  .about__cards {
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+  }
+}
