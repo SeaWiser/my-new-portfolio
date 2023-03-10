@@ -55,6 +55,10 @@ textarea {
   color: var(--color-white);
 }
 
+textarea {
+  font-family: Arial, Helvetica, sans-serif;
+}
+
 button[disabled] {
   opacity: 0.5;
   cursor: not-allowed;
@@ -71,9 +75,14 @@ button[disabled] {
   border: 1px solid red;
 }
 
+input.has-error {
+  margin-bottom: 0.4rem;
+}
+
 .error-message {
   color: red;
 }
+
 
 /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
 

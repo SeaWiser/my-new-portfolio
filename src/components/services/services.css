@@ -5,6 +5,7 @@
 }
 
 .service {
+  height: fit-content;
   background: var(--color-bg-variant);
   border-radius: 2rem;
   border: 1px solid var(--color-primary);
@@ -52,7 +53,7 @@
 
 /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
 
-@media screen and (max-width: 1024px) {
+@media screen and (max-width: 1200px) {
   .services__container {
     grid-template-columns: 1fr 1fr;
     gap: 2rem;

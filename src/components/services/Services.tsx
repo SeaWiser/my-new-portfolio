@@ -1,42 +1,38 @@
-import React, { Component } from 'react';
+import React, { useEffect, useState } from 'react';
 import './services.css';
 import { BiCheck } from "react-icons/bi";
-import Block from "../shared/Block";
+import { Fade } from "react-reveal";
+import { useTranslation } from "react-i18next";
 
-interface ServicesProps {
-  isMobile: boolean
-}
+function Services() {
+  const MEDIUM = 1200;
+  const [isMedium, setIsMedium] = useState(window.innerWidth < 1200);
+  const {t} = useTranslation();
 
-class Services extends Component<{}, ServicesProps> {
-  constructor(props: ServicesProps) {
-    super(props);
-    this.state = {
-      isMobile: window.innerWidth < 600
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMedium(window.innerWidth < MEDIUM);
     };
-  }
+    window.addEventListener('resize', handleResize);
+    return () => {
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
 
-  componentDidMount() {
-    window.addEventListener('resize', () => {
-      this.setState({
-        isMobile: window.innerWidth < 600
-      });
-    }, false);
-  }
+  return (
+    <section id="services">
+      <Fade left>
+        <h5>{t('services.subtitle')}</h5>
+      </Fade>
+      <Fade right>
+        <h2>{t('services.title')}</h2>
+      </Fade>
 
-  render() {
-    return (
-      <section id="services" className={this.state.isMobile ? 'mobile' : ''}>
-        <Block className="animate__fadeInLeft">
-          <h5>What I Offer</h5>
-        </Block>
-        <Block className="animate__fadeInRight">
-          <h2>Services</h2>
-        </Block>
-
-        <div className="container services__container">
-          <Block className="service animate__fadeInLeft" useArticle={true}>
+      <div className="container services__container">
+        <Fade left>
+          <article className="service">
             <div className="service__head">
-              <h3>Front-End Development</h3>
+              <h3>{t('front_end')}</h3>
             </div>
 
             <ul className="service__list">
@@ -44,50 +40,51 @@ class Services extends Component<{}, ServicesProps> {
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Design the structure and layout of the user interface</p>
+                <p>{t('services.front_end_skill_1')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Develop the user interface using markup languages such as HTML, CSS, and JavaScript</p>
+                <p>{t('services.front_end_skill_2')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Optimize the user interface for an efficient and user-friendly user experience</p>
+                <p>{t('services.front_end_skill_3')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Integrate libraries and frameworks such as Angular, Vue and React</p>
+                <p>{t('services.front_end_skill_4')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Perform compatibility tests with different browsers and screen resolutions</p>
+                <p>{t('services.front_end_skill_5')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Ensure consistency of the user interface with the brand identity</p>
+                <p>{t('services.front_end_skill_6')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Document design choices and features to facilitate future modifications.</p>
+                <p>{t('services.front_end_skill_7')}</p>
               </li>
             </ul>
-          </Block>
-
-          <Block className={"service " + (this.state.isMobile ? 'animate__fadeInRight' : 'animate__fadeInUp')} useArticle={true}>
+          </article>
+        </Fade>
+        <Fade bottom={!isMedium} right={isMedium}>
+          <article className="service">
             <div className="service__head">
-              <h3>Back-End Development</h3>
+              <h3>{t('back_end')}</h3>
             </div>
 
             <ul className="service__list">
@@ -95,51 +92,52 @@ class Services extends Component<{}, ServicesProps> {
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Analyze the client's functional needs for application development</p>
+                <p>{t('services.back_end_skill_1')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Design the database structure to store application data</p>
+                <p>{t('services.back_end_skill_2')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Develop server-side functionality using programming languages such as PHP and Javascript with Node
-                  JS</p>
+                <p>{t('services.back_end_skill_3')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Ensure data security by implementing data protection measures and firewalls</p>
+                <p>{t('services.back_end_skill_4')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Perform performance testing to ensure the application is fast and responsive</p>
+                <p>{t('services.back_end_skill_5')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Deploy the application on an online server</p>
+                <p>{t('services.back_end_skill_6')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Document the application architecture to facilitate future modifications</p>
+                <p>{t('services.back_end_skill_7')}</p>
               </li>
             </ul>
-          </Block>
+          </article>
+        </Fade>
 
-          <Block className={"service " + (this.state.isMobile ? 'animate__fadeInLeft' : 'animate__fadeInRight')} useArticle={true}>
+        <Fade right={!isMedium} left={isMedium}>
+          <article className="service">
             <div className="service__head">
-              <h3>Project Management</h3>
+              <h3>{t('services.project_management')}</h3>
             </div>
 
             <ul className="service__list">
@@ -147,50 +145,50 @@ class Services extends Component<{}, ServicesProps> {
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Plan and organize project tasks, including deadlines and required resources</p>
+                <p>{t('services.project_management_skill_1')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Establish a delivery schedule and milestones for the project</p>
+                <p>{t('services.project_management_skill_2')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Communicate with the client throughout the project to ensure satisfaction</p>
+                <p>{t('services.project_management_skill_3')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Manage project risks and issues</p>
+                <p>{t('services.project_management_skill_4')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Ensure coordination between development team members and other stakeholders</p>
+                <p>{t('services.project_management_skill_5')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Monitor project progress and make adjustments as necessary</p>
+                <p>{t('services.project_management_skill_6')}</p>
               </li>
               <li>
                 <div>
                   <BiCheck className="service__list-icon"/>
                 </div>
-                <p>Document the project to facilitate future maintenance and updates</p>
+                <p>{t('services.project_management_skill_7')}</p>
               </li>
             </ul>
-          </Block>
-        </div>
-      </section>
-    );
-  }
+          </article>
+        </Fade>
+      </div>
+    </section>
+  );
 }
 
 export default Services;

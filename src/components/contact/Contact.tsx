@@ -1,239 +1,209 @@
-import React, { ChangeEvent, Component } from 'react';
+import React, { useState } from 'react';
 import './contact.css';
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
-import { ContactState } from "../../models/contact-form/contact-state";
+import { JackInTheBox } from "react-awesome-reveal";
+import { Fade } from "react-reveal";
+import { useTranslation } from "react-i18next";
+import { useForm } from "react-hook-form";
+import { Form } from "../../models/contact-form/form";
 import { toast } from "react-hot-toast";
-import Block from "../shared/Block";
+import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
 
-class Contact extends Component<{}, ContactState> {
-  private countdownInterval: NodeJS.Timeout | null = null;
-  private waitTime = 120000;
-  private readonly nameMinLength = 2;
-  private readonly nameMaxLength = 50;
-  private readonly emailMaxLength = 100;
-  private readonly messageMinLength = 10;
-  private readonly messageMaxLength = 400;
+function Contact() {
+  const {t} = useTranslation();
+  const WAIT_TIME = 120000;
+  const NAME_MIN_LENGTH = 2;
+  const NAME_MAX_LENGTH = 50;
+  const EMAIL_MAX_LENGTH = 100;
+  const MESSAGE_MIN_LENGTH = 10;
+  const MESSAGE_MAX_LENGTH = 400;
+  const EMAIL_PATTERN = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-  constructor(props: ContactState) {
-    super(props);
+  let countdownInterval: NodeJS.Timeout | null = null;
+  const [lastMessageSentTime, setLastMessageSentTime] = useState(0);
+  const [timeLeft, setTimeLeft] = useState(0);
 
-    this.state = {
-      name: '',
-      email: '',
-      message: '',
-      formErrors: {name: '', email: '', message: ''},
-      nameValid: false,
-      emailValid: false,
-      messageValid: false,
-      formValid: false,
-      lastMessageSentTime: 0,
-      timeLeft: 0,
-      isSubmitting: false
-    };
-
-    this.startCountdown = this.startCountdown.bind(this);
-    this.stopCountdown = this.stopCountdown.bind(this);
-  }
-
-  startCountdown() {
-    this.countdownInterval = setInterval(() => {
-      const currentTime = new Date().getTime();
-      const elapsedTime = currentTime - this.state.lastMessageSentTime;
-      const timeLeft = Math.max(0, 120000 - elapsedTime); // Met à jour le temps restant
-
-      this.setState({timeLeft}, () => {
-        if (this.state.timeLeft === 0) {
-          this.stopCountdown(); // Arrête le compte à rebours lorsque le temps est écoulé
-        } else {
-          this.forceUpdate(); // Met à jour le rendu avec le temps restant
-        }
-      });
+  function startCountdown() {
+    countdownInterval = setInterval(() => {
+      if (timeLeft === 0) {
+        stopCountdown();
+      }
     }, 1000); // Met à jour l'état toutes les secondes
   }
 
-  stopCountdown() {
-    if (this.countdownInterval) {
-      clearInterval(this.countdownInterval); // Arrête l'interval
-      this.countdownInterval = null; // Réinitialise la propriété
-      this.setState({timeLeft: 0}); // Met à jour le temps restant
-      this.forceUpdate(); // Met à jour le rendu pour afficher 0
+  function stopCountdown() {
+    if (countdownInterval) {
+      clearInterval(countdownInterval); // Arrête l'interval
+      countdownInterval = null; // Réinitialise la propriété
+      setTimeLeft(0);
     }
   }
 
+  const {
+    register,
+    handleSubmit,
+    formState: {
+      errors,
+      isSubmitting,
+    },
+    reset
+  } = useForm({
+    mode: "onChange",
+    defaultValues: {
+      "name": "",
+      "email": "",
+      "message": ""
+    }
+  });
 
-  handleSubmit(e: any) {
-    e.preventDefault();
-
+  function onSubmit(data: Form) {
     const currentTime = new Date().getTime();
-    const timeSinceLastMessage = currentTime - this.state.lastMessageSentTime;
+    const timeSinceLastMessage = currentTime - lastMessageSentTime;
+    const dataForm = {
+      name: data.name,
+      email: data.email,
+      message: data.message,
+    }
 
-    // Set isSubmitting to true when submitting the form
-    this.setState({isSubmitting: true});
-
-    if (timeSinceLastMessage > this.waitTime) {
-      emailjs.sendForm('service_gvxffb2', 'template_0nry3wu', e.target, 'UPSI5R6e0J5PWUXl5').then(
+    if (timeSinceLastMessage > WAIT_TIME) {
+      emailjs.send('service_gvxffb2', 'template_0nry3wu', dataForm, 'UPSI5R6e0J5PWUXl5').then(
         (result: EmailJSResponseStatus) => {
           console.log(result.text);
           toast.success("Message sent !");
-          this.setState({
-            name: '',
-            email: '',
-            message: '',
-            formErrors: {name: '', email: '', message: ''},
-            nameValid: false,
-            emailValid: false,
-            messageValid: false,
-            formValid: false,
-            lastMessageSentTime: currentTime,
-            timeLeft: this.waitTime,
-            isSubmitting: false
-          }); // Met à jour l'heure du dernier message envoyé et commence à compter le temps restant
-          this.startCountdown(); // Démarre le compte à rebours
-
-          // Set isSubmitting to false after successful submission
-          this.setState({isSubmitting: false});
+          reset();
+          setLastMessageSentTime(currentTime);
+          setTimeLeft(WAIT_TIME);
+          startCountdown(); // Démarre le compte à rebours
         },
         (error: { text: string; }) => {
           console.log(error.text);
-
-          // Set isSubmitting to false after submission with error
-          this.setState({isSubmitting: false});
         }
       );
     } else {
-      toast.error('Please wait for ' + Math.ceil((this.waitTime - timeSinceLastMessage) / 1000) + ' seconds before sending another message.');
-
-      // Set isSubmitting to false after submission with error
-      this.setState({isSubmitting: false});
+      toast.error('Please wait for ' + Math.ceil((WAIT_TIME - timeSinceLastMessage) / 1000) + ' seconds before sending another message.');
     }
   }
 
-  handleChange(e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) {
-    const name = e.target.name;
-    const value = e.target.value;
+  return (
+    <section id="contact">
+      <Fade left>
+        <h5>{t('contact.subtitle')}</h5>
+      </Fade>
+      <Fade right>
+        <h2>{t('contact.title')}</h2>
+      </Fade>
 
-    this.setState({...this.state, [name]: value},
-      () => {
-        this.validateField(name, value);
-        this.validateForm()
-      });
-  }
-
-  validateField(fieldName: string, value: string) {
-    let fieldValidationErrors = this.state.formErrors;
-    let emailValid = this.state.emailValid;
-    let nameValid = this.state.nameValid;
-    let messageValid = this.state.messageValid;
-
-    switch (fieldName) {
-      case 'email':
-        emailValid = !!(value && value.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i));
-        fieldValidationErrors.email = !value ? 'Email is required' : (emailValid ? (value.length > this.emailMaxLength ?
-          `Email is too long (max ${this.emailMaxLength} characters)` : '') : 'Email is invalid');
-        break;
-      case 'name':
-        nameValid = !!(value && value.length >= this.nameMinLength && value.length <= this.nameMaxLength);
-        fieldValidationErrors.name = !value ?
-          (nameValid ? '' : `Name is required`)
-          : (nameValid ? '' : `Name should be between ${this.nameMinLength} and ${this.nameMaxLength} characters`);
-        break;
-      case 'message':
-        messageValid = !!(value && value.length >= this.messageMinLength && value.length <= this.messageMaxLength);
-        fieldValidationErrors.message = !value ?
-          (messageValid ? '' : `Message is required`)
-          : (messageValid ? '' : `Message should be between ${this.messageMinLength} and ${this.messageMaxLength} characters`);
-        break;
-      default:
-        break;
-    }
-
-    this.setState({
-      formErrors: fieldValidationErrors,
-      emailValid: emailValid,
-      nameValid: nameValid,
-      messageValid: messageValid
-    }, this.validateForm);
-  }
-
-  validateForm() {
-    this.setState({formValid: this.state.emailValid && this.state.nameValid && this.state.messageValid});
-  }
-
-  errorClass(error: string) {
-    return (error.length === 0 ? '' : 'has-error');
-  }
-
-  render() {
-    return (
-      <section id="contact">
-        <Block className="animate__fadeInLeft">
-          <h5>Get In Touch</h5>
-        </Block>
-        <Block className="animate__fadeInRight">
-          <h2>Contact Me</h2>
-        </Block>
-
-        <div className="container contact__container">
-          <div className="contact__options">
-            <Block className="contact__option animate__jackInTheBox" useArticle={true}>
+      <div className="container contact__container">
+        <div className="contact__options">
+          <JackInTheBox triggerOnce={true} cascade={true}>
+            <article className="contact__option">
               <MdOutlineEmail className="contact__option-icon"/>
               <h4>Email</h4>
               <h5>graillot.yanis@gmail.com</h5>
-              <a href="mailto:graillot.yanis@gmail.com" rel="noreferrer" target="_blank">Send a message</a>
-            </Block>
-            <Block className="contact__option animate__jackInTheBox" useArticle={true}>
+              <a href="mailto:graillot.yanis@gmail.com" rel="noreferrer" target="_blank">{t('contact.send_message')}</a>
+            </article>
+            <article className="contact__option">
               <RiMessengerLine className="contact__option-icon"/>
               <h4>Messenger</h4>
               <h5>Yanis Graillot</h5>
-              <a href="https://m.me/100090831364043" rel="noreferrer" target="_blank">Send a message</a>
-            </Block>
-            <Block className="contact__option animate__jackInTheBox" useArticle={true}>
+              <a href="https://m.me/100090831364043" rel="noreferrer" target="_blank">{t('contact.send_message')}</a>
+            </article>
+            <article className="contact__option">
               <BsWhatsapp className="contact__option-icon"/>
               <h4>WhatsApp</h4>
               <h5>+33698588270</h5>
-              <a href="https://api.whatsapp.com/send?phone+33698588270">Send a message</a>
-            </Block>
-          </div>
-          <form onSubmit={this.handleSubmit.bind(this)}>
-            <Block className="form-group animate__fadeInDown">
-              {this.state.formErrors.name && (
-                <span className="error-message">{this.state.formErrors.name}</span>
-              )}
-              <input type="text" value={this.state.name} onChange={(event) => this.handleChange(event)} name="name"
-                     placeholder="Your Full Name"
-                     className={this.errorClass(this.state.formErrors.name)}
-                     required/>
-            </Block>
-            <Block className="form-group animate__fadeInRight">
-              {this.state.formErrors.email && (
-                <span className="error-message">{this.state.formErrors.email}</span>
-              )}
-              <input type="text" value={this.state.email} onChange={(event) => this.handleChange(event)} name="email"
-                     className={this.errorClass(this.state.formErrors.email)}
-                     placeholder="Your Email" required/>
-            </Block>
-            <Block className="form-group animate__fadeInUp">
-              {this.state.formErrors.message && (
-                <span className="error-message">{this.state.formErrors.message}</span>
-              )}
-              <textarea name="message" value={this.state.message} onChange={(event) => this.handleChange(event)}
-                        className={this.errorClass(this.state.formErrors.message)}
-                        rows={7} placeholder="Your Message" required></textarea>
-            </Block>
-            <Block className="animate__fadeInUpBig">
-              <button type="submit" className="btn btn-primary submit-btn"
-                      disabled={!this.state.formValid || this.state.isSubmitting}>
-                Send Message
-              </button>
-            </Block>
-          </form>
+              <a href="https://api.whatsapp.com/send?phone+33698588270">{t('contact.send_message')}</a>
+            </article>
+          </JackInTheBox>
         </div>
-      </section>
-    );
-  }
+        <form onSubmit={handleSubmit(onSubmit)}>
+          <Fade top>
+            <div className="form-group">
+              <label>
+                <input
+                  {...register("name", {
+                    required: t('contact.form_full_name') + t('contact.errors.required'),
+                    minLength: {
+                      value: NAME_MIN_LENGTH,
+                      message: t('contact.form_full_name') + t('contact.errors.too_short', {minLength: NAME_MIN_LENGTH})
+                    },
+                    maxLength: {
+                      value: NAME_MAX_LENGTH,
+                      message: t('contact.form_full_name') + t('contact.errors.too_long', {maxLength: NAME_MAX_LENGTH})
+                    },
+                  })}
+                  className={errors["name"] && "has-error"}
+                  aria-invalid={errors["name"] ? "true" : "false"}
+                  type="text"
+                  placeholder="Your Full Name"
+                />
+                <Fade bottom>
+                  {errors["name"] && <span className="error-message" role="alert">{errors["name"]?.message}</span>}
+                </Fade>
+              </label>
+            </div>
+          </Fade>
+          <Fade right>
+            <div className="form-group">
+              <label>
+                <input
+                  {...register("email", {
+                    required: t('contact.form_email') + t('contact.errors.required'),
+                    maxLength: {
+                      value: EMAIL_MAX_LENGTH,
+                      message: t('contact.form_email') + t('contact.errors.too_long', {maxLength: EMAIL_MAX_LENGTH})
+                    },
+                    pattern: {
+                      value: EMAIL_PATTERN,
+                      message: t('contact.form_email') + t('contact.errors.invalid')
+                    },
+                  })}
+                  className={errors["email"] && "has-error"}
+                  aria-invalid={errors["email"] ? "true" : "false"}
+                  type="email"
+                  placeholder="Your Email"
+                />
+                <Fade bottom>
+                  {errors["email"] && <span className="error-message" role="alert">{errors["email"]?.message}</span>}
+                </Fade>
+              </label>
+            </div>
+          </Fade>
+          <Fade bottom>
+            <div className="form-group">
+              <label>
+                <textarea rows={7}
+                          {...register("message", {
+                            required: t('contact.form_message') + t('contact.errors.required'),
+                            minLength: {
+                              value: MESSAGE_MIN_LENGTH,
+                              message: t('contact.form_message') + t('contact.errors.too_short', {minLength: MESSAGE_MIN_LENGTH})
+                            },
+                            maxLength: {
+                              value: MESSAGE_MAX_LENGTH,
+                              message: t('contact.form_message') + t('contact.errors.too_long', {maxLength: MESSAGE_MAX_LENGTH})
+                            },
+                          })}
+                          className={errors["message"] && "has-error"}
+                          aria-invalid={errors["message"] ? "true" : "false"}
+                          placeholder="Your Message"
+                />
+                <Fade bottom>
+                  {errors["message"] &&
+                    <span className="error-message" role="alert">{errors["message"]?.message}</span>}
+                </Fade>
+              </label>
+            </div>
+          </Fade>
+          <Fade bottom big>
+            <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>{t('contact.send_message')}</button>
+          </Fade>
+        </form>
+      </div>
+    </section>
+  );
 }
 
 export default Contact;

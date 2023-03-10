@@ -1,8 +1,9 @@
 import { Component } from 'react';
 import './nav.css';
 import { AiOutlineHome, AiOutlineUser } from "react-icons/ai";
-import { BiBook, BiMessageSquareDetail } from "react-icons/bi";
+import { BiBook } from "react-icons/bi";
 import { RiServiceLine } from "react-icons/ri";
+import { MdOutlineTimeline } from "react-icons/md";
 import { ActiveNav } from "../../models/activeNav";
 
 class Nav extends Component<{}, ActiveNav> {
@@ -60,15 +61,16 @@ class Nav extends Component<{}, ActiveNav> {
   render() {
     return (
       <nav>
-        <a href="/#" onClick={() => this.setActiveNav('#')} className={this.state.activeNav==='#' ? 'active' : ''}><AiOutlineHome/></a>
+        <a href="/#" onClick={() => this.setActiveNav('#')}
+           className={this.state.activeNav === '#' ? 'active' : ''}><AiOutlineHome/></a>
         <a href={'#about'} onClick={() => this.setActiveNav('#about')}
-           className={this.state.activeNav==='#about' ? 'active' : ''}><AiOutlineUser/></a>
+           className={this.state.activeNav === '#about' ? 'active' : ''}><AiOutlineUser/></a>
         <a href={'#experience'} onClick={() => this.setActiveNav('#experience')}
-           className={this.state.activeNav==='#experience' ? 'active' : ''}><BiBook/></a>
+           className={this.state.activeNav === '#experience' ? 'active' : ''}><BiBook/></a>
         <a href={'#services'} onClick={() => this.setActiveNav('#services')}
-           className={this.state.activeNav==='#services' ? 'active' : ''}><RiServiceLine/></a>
-        <a href={'#contact'} onClick={() => this.setActiveNav('#contact')}
-           className={this.state.activeNav==='#contact' ? 'active' : ''}><BiMessageSquareDetail/></a>
+           className={this.state.activeNav === '#services' ? 'active' : ''}><RiServiceLine/></a>
+        <a href={'#background'} onClick={() => this.setActiveNav('#background')}
+           className={this.state.activeNav === '#background' ? 'active' : ''}><MdOutlineTimeline/></a>
       </nav>
     );
   }
