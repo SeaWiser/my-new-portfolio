@@ -3,6 +3,7 @@
   "talk": "Let's talk",
   "front_end": "Front-End Development",
   "back_end": "Back-End Development",
+  "home": "Home",
   "description": {
     "part1": "This is a simple example.",
     "part2": "😉"
@@ -14,6 +15,7 @@
     "scroll_down": "Scroll Down"
   },
   "about": {
+    "about": "About",
     "subtitle": "Get To Know",
     "title": "About Me",
     "experience_title": "Experience",
@@ -22,9 +24,10 @@
     "clients_description": "{{clients}}+ Worldwide",
     "projects_title": "Projects",
     "projects_description": "{{projects}}+ Completed",
-    "description": "I am a full stack web developer with 4 years of experience, specializing in front-end development with Angular, Vue, and React, as well as back-end development with Php/Symfony and Node.js/Express. I am passionate about creating innovative, performant, and scalable web applications."
+    "description": "I am a full stack web developer with 4 years of experience, specializing in Front-End development with Angular, Vue, and React, as well as back-end development with Php/Symfony and Node.js/Express. I am passionate about creating innovative, performant, and scalable web applications."
   },
   "experience": {
+    "experience": "Experience",
     "subtitle": "What Skills I Have",
     "title": "My Experience",
     "basic": "Basic",
@@ -32,6 +35,7 @@
     "experienced": "Experienced"
   },
   "services": {
+    "services": "Services",
     "subtitle": "What I Offer",
     "title": "Services",
     "project_management": "Project Management",
@@ -60,6 +64,7 @@
     "project_management_skill_7": "Document the project to facilitate future maintenance and updates"
   },
   "background": {
+    "background": "Background",
     "subtitle": "My Career Evolution",
     "title": "My Background",
 
@@ -98,6 +103,7 @@
     "work_experience_date_7": "2022 - 2023"
   },
   "contact": {
+    "contact": "Contact",
     "subtitle": "Get In Touch",
     "title": "Contact Me",
     "send_message": "Send a message",
@@ -106,15 +112,10 @@
     "form_message": "Your Message",
     "form_send_message": "Send Message",
     "errors": {
-      "name_required": "Name is required",
-      "name_invalid": "Name should be between {{minLength}} and {{maxLength}} characters",
-
-      "email_required": "Email is required",
-      "email_invalid": "Email is invalid",
-      "email_too_long": "Email is too long (max {{maxLength}} characters)",
-
-      "message_required": "Message is required",
-      "message_invalid": "Message should be between {{minLength}} and {{maxLength}} characters"
+      "required": " is required",
+      "invalid": " is invalid",
+      "too_short": " must contain at least {{minLength}} characters",
+      "too_long": " must contain a maximum of {{maxLength}} characters"
     }
   },
   "footer": {

@@ -11,7 +11,6 @@ import './i18n/config';
 
 
 function App() {
-
   return (
     <>
       <Header/>

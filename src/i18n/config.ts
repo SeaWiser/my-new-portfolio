@@ -17,7 +17,13 @@ i18next
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    lng: "en",
-    debug: true,
+    detection: {
+      lookupLocalStorage: 'language'
+    },
     resources,
+    fallbackLng: "en", // use en if detected lng is not available
+    // lng: "en",
+    debug: true,
   });
+
+export default i18next;

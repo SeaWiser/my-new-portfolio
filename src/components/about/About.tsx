@@ -1,63 +1,65 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './about.css';
 import ME from '../../assets/me-about.png';
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 import 'animate.css';
-import Block from "../shared/Block";
+import { useTranslation } from "react-i18next";
+import { JackInTheBox } from "react-awesome-reveal";
+import { Fade } from "react-reveal";
 
-class About extends Component {
-  render() {
-    return (
-      <section id="about">
-        <Block className="animate__fadeInLeft">
-          <h5>Get To Know</h5>
-        </Block>
-        <Block className="animate__fadeInRight">
-          <h2>About Me</h2>
-        </Block>
-        <div className="container about__container">
-          <Block className="about__me animate__fadeInUpBig">
+function About() {
+  const {t} = useTranslation();
+
+  return (
+    <section id="about">
+      <Fade left>
+        <h5>{t('about.subtitle')}</h5>
+      </Fade>
+      <Fade right>
+        <h2>{t('about.title')}</h2>
+      </Fade>
+      <div className="container about__container">
+        <Fade bottom big>
+          <div className="about__me">
             <div className="about__me-image">
               <img src={ME} alt="About Me"/>
             </div>
-          </Block>
+          </div>
+        </Fade>
 
-          <div className="about__content">
-            <div className="about__cards">
-              <Block className="about__card animate__jackInTheBox" useArticle={true}>
+        <div className="about__content">
+          <div className="about__cards">
+            <JackInTheBox triggerOnce={true} cascade={true}>
+              <article className="about__card">
                 <FaAward className="about__icon"/>
-                <h5>Experience</h5>
-                <small>1+ Year Working</small>
-              </Block>
-              <Block className="about__card animate__jackInTheBox" useArticle={true}>
+                <h5>{t('about.experience_title')}</h5>
+                <small>{t('about.experience_description', {years: 1})}</small>
+              </article>
+              <article className="about__card">
                 <FiUsers className="about__icon"/>
-                <h5>Clients</h5>
-                <small>5+ Worldwide</small>
-              </Block>
-              <Block className="about__card animate__jackInTheBox" useArticle={true}>
+                <h5>{t('about.clients_title')}</h5>
+                <small>{t('about.clients_description', {clients: 5})}</small>
+              </article>
+              <article className="about__card">
                 <VscFolderLibrary className="about__icon"/>
                 <h5>Projects</h5>
-                <small>20+ Completed</small>
-              </Block>
-            </div>
-
-            <Block className="animate__fadeInRight">
-              <p>
-                I am a full stack web developer with 4 years of experience, specializing in front-end development with
-                Angular, Vue, and React, as well as back-end development with Php/Symfony and Node.js/Express. I am
-                passionate about creating innovative, performant, and scalable web applications.
-              </p>
-            </Block>
-            <Block className="animate__fadeInUpBig">
-              <a href={"#contact"} className="btn btn-primary">Let's talk</a>
-            </Block>
+                <small>{t('about.projects_description', {projects: 20})}</small>
+              </article>
+            </JackInTheBox>
           </div>
+
+          <Fade right>
+            <p>{t('about.description')}</p>
+          </Fade>
+          <Fade bottom big>
+            <a href={"#contact"} className="btn btn-primary">{t('talk')}</a>
+          </Fade>
         </div>
-      </section>
-    );
-  }
+      </div>
+    </section>
+  );
 }
 
 export default About;

@@ -3,6 +3,7 @@
   "talk": "Parlons-en",
   "front_end": "Développement Front-End",
   "back_end": "Développement Back-End",
+  "home": "Accueil",
   "description": {
     "part1": "Ceci est un exemple simple.",
     "part2": "😉"
@@ -14,10 +15,11 @@
     "scroll_down": "Descendre"
   },
   "about": {
+    "about": "À propos",
     "subtitle": "Faisons connaissance",
     "title": "À propos de moi",
     "experience_title": "Expérience",
-    "experience_description": "{{years}}+ Années d'Expérience",
+    "experience_description": "{{years}}+ Années d'expérience",
     "clients_title": "Clients",
     "clients_description": "{{clients}}+ Partout dans le Monde",
     "projects_title": "Projets",
@@ -25,13 +27,15 @@
     "description": "Je suis un développeur web Full Stack avec 4 ans d'expérience, spécialisé dans le développement Front-End avec Angular, Vue et React, ainsi que le développement Back-End avec Php/Symfony et Node.js/Express. Je suis passionné par la création d'applications web innovantes, performantes et évolutives."
   },
   "experience": {
+    "experience": "Expérience",
     "subtitle": "Mes Compétences",
     "title": "Mon Expérience",
-    "basic": "Basique",
+    "basic": "Élémentaire",
     "intermediate": "Intermédiaire",
     "experienced": "Expérimenté"
   },
   "services": {
+    "services": "Services",
     "subtitle": "Ce que je propose",
     "title": "Services",
     "project_management": "Gestion de projet",
@@ -60,6 +64,10 @@
     "project_management_skill_7": "Documenter le projet pour faciliter la maintenance et les mises à jour futures"
   },
   "background": {
+    "background": "Parcours",
+    "subtitle": "Mon évolution de carrière",
+    "title": "Mon parcours",
+
     "school_experience_title_1": "Développeur Web-Intégrateur (Esecad & OpenClassrooms)",
     "school_experience_subtitle_1": "Cours en ligne",
     "school_experience_description_1": "Apprentissage à distance du développement web pour maîtriser les bases des langages HTML, CSS et PHP.",
@@ -95,21 +103,19 @@
     "work_experience_date_7": "2022 - 2023"
   },
   "contact": {
+    "contact": "Contact",
     "subtitle": "Entrez en contact",
     "title": "Contactez-moi",
     "send_message": "Envoyer un message",
-    "form_full_name": "Votre nom complet",
-    "form_email": "Votre adresse e-mail",
-    "form_message": "Votre message",
+    "form_full_name": "Votre Nom",
+    "form_email": "Votre E-mail",
+    "form_message": "Votre Message",
     "form_send_message": "Envoyer le message",
     "errors": {
-      "name_required": "Le nom est obligatoire",
-      "name_invalid": "Le nom doit contenir entre {{minLength}} et {{maxLength}} caractères",
-      "email_required": "L'adresse e-mail est obligatoire",
-      "email_invalid": "L'adresse e-mail est invalide",
-      "email_too_long": "L'adresse e-mail est trop longue (max {{maxLength}} caractères)",
-      "message_required": "Le message est obligatoire",
-      "message_invalid": "Le message doit contenir entre {{minLength}} et {{maxLength}} caractères"
+      "required": " est obligatoire",
+      "invalid": " est invalide",
+      "too_short": " doit contenir au minimum {{minLength}} caractères",
+      "too_long": " doit contenir au maximum {{maxLength}} caractères"
     }
   },
   "footer": {

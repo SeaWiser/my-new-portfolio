@@ -22,9 +22,9 @@ header {
   text-align: justify;
 }
 
-.my_logo {
-  max-width: 55px;
-  height: auto;
+.my_logo img {
+  height: 7rem;
+  width: auto;
 }
 
 /* ----------- CTA ----------- */
@@ -140,6 +140,10 @@ header {
 
   .me {
     max-width: 15rem;
+  }
+
+  .my_logo img {
+    height: 5rem;
   }
 
   .cta__container {

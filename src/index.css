@@ -146,3 +146,11 @@ img {
     margin-top: 4rem;
   }
 }
+
+/* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
+
+@media screen and (max-width: 392px) {
+  .btn {
+    padding: 0.5rem 0.8rem;
+  }
+}

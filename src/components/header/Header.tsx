@@ -6,8 +6,12 @@ import LOGO from '../../assets/Yanis_Logo_V2_2023.svg';
 import HeaderSocials from "./HeaderSocials";
 import { Toaster } from "react-hot-toast";
 import 'animate.css';
+import { useTranslation } from "react-i18next";
+import { Fade, Slide, Roll } from "react-reveal";
 
 function Header() {
+  const { t } = useTranslation();
+
   return (
     <header id="home">
       <Toaster
@@ -16,24 +20,40 @@ function Header() {
       />
       <div className="container header__container">
         <div className="titles_with_logo">
-          <img src={LOGO} alt="logo" className="my_logo animate__animated animate__fadeInDown"/>
+          <Fade top>
+            <div className="my_logo">
+              <img src={LOGO} alt="logo"/>
+            </div>
+          </Fade>
           <div className="titles_section">
-            <h5 className="animate__animated animate__fadeInLeft">Hello I'm</h5>
-            <h1 className="animate__animated animate__fadeInRight">Yanis Graillot</h1>
-            <h5 className="text-light animate__animated  animate__fadeInLeft">Fullstack Developer</h5>
+            <Fade top>
+              <h5 className="animate__animated animate__fadeInDown">{t('header.title')}</h5>
+            </Fade>
+            <Fade right>
+              <h1 className="animate__animated animate__fadeInRight">Yanis Graillot</h1>
+            </Fade>
+            <Fade bottom>
+              <h5 className="text-light animate__animated animate__fadeInUp">{t('header.job')}</h5>
+            </Fade>
           </div>
         </div>
         <div className="me__container">
           <div className="header__socials__container">
             <HeaderSocials/>
           </div>
-          <div className="me animate__animated animate__fadeInUpBig">
-            <div className="me_image">
-              <img src={ME} alt="me"/>
+          <Slide bottom>
+            <div className="me">
+              <div className="me_image">
+                <img src={ME} alt="me"/>
+              </div>
             </div>
-          </div>
+          </Slide>
           <div className="scroll__down__container">
-            <a href={'#contact'} className="scroll__down animate__animated animate__rollIn">Scroll Down</a>
+            <Roll right>
+              <div className="scroll__down">
+                <a href={'#contact'} className="scroll__down">{t('header.scroll_down')}</a>
+              </div>
+            </Roll>
           </div>
           <div className="cta__container">
             <CTA/>
