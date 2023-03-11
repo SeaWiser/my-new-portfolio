@@ -1,5 +1,6 @@
 {
-  "name": "my-new-portfolio",
+  "name": "my-portfolio",
+  "homepage": "https://ygraillot.com",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
