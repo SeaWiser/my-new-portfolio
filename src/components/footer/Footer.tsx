@@ -3,13 +3,11 @@ import './footer.scss';
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
 import LOGO from "../../assets/LOGO_Yanis_LightVersion_23.svg";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
+import { t } from "i18next";
 
 function Footer() {
-  const {t} = useTranslation();
-
   return (
     <footer>
       <div className="footer__logo">

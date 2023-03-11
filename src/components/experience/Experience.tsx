@@ -18,12 +18,10 @@ import { GrMysql } from "react-icons/gr";
 import { FiDatabase } from "react-icons/fi";
 import { FaSass } from "react-icons/fa";
 import 'animate.css';
-import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 import { Fade } from "react-reveal";
 
 function Experience() {
-  const {t} = useTranslation();
-
   return (
     <section id="experience">
       <div className="animate__animated animate__fadeInLeft">

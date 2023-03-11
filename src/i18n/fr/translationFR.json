@@ -1,5 +1,5 @@
 {
-  "title": "Bienvenue {{name}}, à React en utilisant react-i18next de manière totalement sûre",
+  "title": "Mon Portfolio",
   "talk": "Parlons-en",
   "front_end": "Développement Front-End",
   "back_end": "Développement Back-End",
@@ -107,7 +107,9 @@
       "invalid": " est invalide",
       "too_short": " doit contenir au minimum {{minLength}} caractères",
       "too_long": " doit contenir au maximum {{maxLength}} caractères"
-    }
+    },
+    "success_message": "Message envoyé !",
+    "error_message": "Veuillez attendre {{seconds}} secondes avant d'envoyer un nouveau message."
   },
   "footer": {
     "home": "Accueil",

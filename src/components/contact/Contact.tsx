@@ -5,14 +5,13 @@ import { RiMessengerLine } from "react-icons/ri";
 import { BsWhatsapp } from "react-icons/bs";
 import { JackInTheBox } from "react-awesome-reveal";
 import { Fade } from "react-reveal";
-import { useTranslation } from "react-i18next";
 import { useForm } from "react-hook-form";
 import { Form } from "../../models/contact-form/form";
 import { toast } from "react-hot-toast";
 import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import { t } from "i18next";
 
 function Contact() {
-  const {t} = useTranslation();
   const WAIT_TIME = 120000;
   const NAME_MIN_LENGTH = 2;
   const NAME_MAX_LENGTH = 50;
@@ -21,7 +20,7 @@ function Contact() {
   const MESSAGE_MAX_LENGTH = 400;
   const EMAIL_PATTERN = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
 
-  let countdownInterval: NodeJS.Timeout | null = null;
+  let countdownInterval: number | null = null;
   const [lastMessageSentTime, setLastMessageSentTime] = useState(0);
   const [timeLeft, setTimeLeft] = useState(0);
 
@@ -71,7 +70,7 @@ function Contact() {
       emailjs.send('service_gvxffb2', 'template_0nry3wu', dataForm, 'UPSI5R6e0J5PWUXl5').then(
         (result: EmailJSResponseStatus) => {
           console.log(result.text);
-          toast.success("Message sent !");
+          toast.success(t('contact.success_message'));
           reset();
           setLastMessageSentTime(currentTime);
           setTimeLeft(WAIT_TIME);
@@ -82,7 +81,7 @@ function Contact() {
         }
       );
     } else {
-      toast.error('Please wait for ' + Math.ceil((WAIT_TIME - timeSinceLastMessage) / 1000) + ' seconds before sending another message.');
+      toast.error(t('contact.error_message', {seconds: Math.ceil((WAIT_TIME - timeSinceLastMessage) / 1000)}));
     }
   }
 
@@ -137,7 +136,7 @@ function Contact() {
                   className={errors["name"] && "has-error"}
                   aria-invalid={errors["name"] ? "true" : "false"}
                   type="text"
-                  placeholder="Your Full Name"
+                  placeholder={t('contact.form_full_name')}
                 />
                 <Fade bottom>
                   {errors["name"] && <span className="error-message" role="alert">{errors["name"]?.message}</span>}
@@ -163,7 +162,7 @@ function Contact() {
                   className={errors["email"] && "has-error"}
                   aria-invalid={errors["email"] ? "true" : "false"}
                   type="email"
-                  placeholder="Your Email"
+                  placeholder={t('contact.form_email')}
                 />
                 <Fade bottom>
                   {errors["email"] && <span className="error-message" role="alert">{errors["email"]?.message}</span>}
@@ -188,7 +187,7 @@ function Contact() {
                           })}
                           className={errors["message"] && "has-error"}
                           aria-invalid={errors["message"] ? "true" : "false"}
-                          placeholder="Your Message"
+                          placeholder={t('contact.form_message')}
                 />
                 <Fade bottom>
                   {errors["message"] &&

@@ -4,7 +4,7 @@ import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeli
 import 'react-vertical-timeline-component/style.min.css';
 import { AiOutlineStar } from "react-icons/ai"
 import { Fade } from "react-reveal";
-import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 import {
   blueArrowStyle,
   certificationIcon,
@@ -18,8 +18,6 @@ import {
 } from "../../constants/timeline";
 
 function Background() {
-  const {t} = useTranslation();
-
   return (
     <section id="background">
       <Fade left>
