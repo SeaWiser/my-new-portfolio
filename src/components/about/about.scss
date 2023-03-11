@@ -1,3 +1,5 @@
+@import "../../theme/assets/mixins";
+
 .about__container {
   display: grid;
   grid-template-columns: 35% 50%;
@@ -12,18 +14,18 @@
   border-radius: 2rem;
   background: linear-gradient(45deg,
   transparent,
-  var(--color-primary), transparent);
+  $color-primary, transparent);
 }
 
 .about__me h2 {
-  margin-bottom: 2rem;
+  margin-bottom: $md-spacing;
 }
 
 .about__me-image {
   border-radius: 2rem;
   overflow: hidden;
   transform: rotate(10deg);
-  transition: var(--transition);
+  transition: $transition;
 }
 
 .about__me-image:hover {
@@ -37,24 +39,24 @@
 }
 
 .about__card {
-  background: var(--color-bg-variant);
+  background: $color-bg-variant;
   border: 1px solid transparent;
   border-radius: 1rem;
-  padding: 2rem;
+  padding: $md-spacing;
   text-align: center;
-  transition: var(--transition);
+  transition: $transition;
 }
 
 .about__card:hover {
   cursor: default;
   background: transparent;
-  border-color: var(--color-primary-variant);
+  border-color: $color-primary-variant;
 }
 
 .about__icon {
-  color: var(--color-primary);
+  color: $color-primary;
   font-size: 1.4rem;
-  margin-bottom: 1rem;
+  margin-bottom: $sm-spacing;
 }
 
 .about__card h5 {
@@ -63,12 +65,12 @@
 
 .about__card small {
   font-size: 0.7rem;
-  color: var(--color-light);
+  color: $color-light;
 }
 
 .about__content p {
-  margin: 2rem 0 2.6rem;
-  color: var(--color-light);
+  margin: $md-spacing 0 2.6rem;
+  color: $color-light;
 }
 
 /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
@@ -81,11 +83,11 @@
 
   .about__me {
     width: 50%;
-    margin: 2rem auto 4rem;
+    margin: $md-spacing auto $xl-spacing;
   }
 
   .about__content p {
-    margin: 1rem 0 1.5rem;
+    margin: $sm-spacing 0 1.5rem;
   }
 }
 
@@ -94,12 +96,12 @@
 @media screen and (max-width: 600px) {
   .about__me {
     width: 65%;
-    margin: 0 auto 3rem;
+    margin: 0 auto $lg-spacing;
   }
 
   .about__cards {
     grid-template-columns: 1fr 1fr;
-    gap: 1rem;
+    gap: $sm-spacing;
   }
 
   .about__content {

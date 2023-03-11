@@ -1,5 +1,7 @@
+@import "../../theme/assets/mixins";
+
 header {
-  padding-top: 5rem;
+  padding-top: $xxl-spacing;
 }
 
 .header__container {
@@ -12,7 +14,7 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: 2rem;
+  gap: $md-spacing;
 }
 
 .titles_section {
@@ -52,7 +54,7 @@ header {
   content: "";
   width: 1px;
   height: 2rem;
-  background: var(--color-primary);
+  background: $color-primary;
   animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
   animation-duration: 1s; /* don't forget to set a duration! */
 }
@@ -109,16 +111,16 @@ header {
 }
 
 .me_image {
-  background: linear-gradient(var(--color-primary), transparent);
+  background: linear-gradient($color-primary, transparent);
   border-radius: 12rem 12rem 0 0;
-  padding: 5rem 1.5rem 0 1.5rem;
+  padding: $xxl-spacing 1.5rem 0 1.5rem;
 }
 
 /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
 
 @media screen and (max-width: 600px) {
   header {
-    padding-top: 4rem;
+    padding-top: $xl-spacing;
   }
 
   .header__socials,
@@ -131,7 +133,7 @@ header {
 
 @media screen and (max-width: 392px) {
   header {
-    padding-top: 2rem;
+    padding-top: $md-spacing;
   }
 
   .titles_section {
@@ -143,7 +145,7 @@ header {
   }
 
   .my_logo img {
-    height: 5rem;
+    height: $xxl-spacing;
   }
 
   .cta__container {

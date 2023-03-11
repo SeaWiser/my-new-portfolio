@@ -1,3 +1,5 @@
+@import "../../theme/assets/mixins";
+
 h3 {
   font-size: 1.2rem;
 }
@@ -12,55 +14,55 @@ h4 {
 }
 
 .vertical-timeline-element-content {
-  transition: var(--transition);
+  transition: $transition;
 }
 
 .vertical-timeline-element-content-arrow {
-  transition: var(--transition);
+  transition: $transition;
 }
 
 /* --------------- FOR WORK TIMELINE ITEM --------------- */
 
 .vertical-timeline-element--work .vertical-timeline-element-content:hover {
   background: transparent !important;
-  border-color: var(--color-primary-variant) !important;
+  border-color: $color-primary-variant !important;
   cursor: default !important;
 }
 
 .vertical-timeline-element--work .vertical-timeline-element-content:hover .vertical-timeline-element-content-arrow {
-  border-right: 12px solid var(--color-primary-variant) !important;
+  border-right: 12px solid $color-primary-variant !important;
 }
 
 /* --------------- FOR DIPLOMA TIMELINE ITEM --------------- */
 
 .vertical-timeline-element--diploma .vertical-timeline-element-content:hover {
   background: transparent !important;
-  border-color: var(--color-success-variant) !important;
+  border-color: $color-success-variant !important;
   cursor: default !important;
 }
 
 .vertical-timeline-element--diploma .vertical-timeline-element-content:hover .vertical-timeline-element-content-arrow {
-  border-right: 12px solid var(--color-success-variant) !important;
+  border-right: 12px solid $color-success-variant !important;
 }
 
 /* --------------- FOR SCHOOL TIMELINE ITEM --------------- */
 
 .vertical-timeline-element--school .vertical-timeline-element-content:hover {
   background: transparent !important;
-  border-color: var(--color-danger-variant) !important;
+  border-color: $color-danger-variant !important;
   cursor: default !important;
 }
 
 .vertical-timeline-element--school .vertical-timeline-element-content:hover .vertical-timeline-element-content-arrow {
-  border-right: 12px solid var(--color-danger-variant) !important;
+  border-right: 12px solid $color-danger-variant !important;
 }
 
 .vertical-timeline--two-columns .vertical-timeline-element:nth-child(odd):not(.vertical-timeline-element--right) .vertical-timeline-element-content-arrow {
-  margin-left: 2px;
+  margin-left: 1.5px;
 }
 
 .vertical-timeline--two-columns .vertical-timeline-element:nth-child(even):not(.vertical-timeline-element--left) .vertical-timeline-element-content-arrow {
-  margin-right: 2px;
+  margin-right: 1.5px;
 }
 
 .vertical-timeline-element--no-children .vertical-timeline-element-content-arrow {
@@ -80,6 +82,6 @@ p.vertical-timeline-element-text {
 @media only screen and (max-width: 1169px) {
   .vertical-timeline--two-columns .vertical-timeline-element .vertical-timeline-element-content-arrow {
     margin-left: 0;
-    margin-right: 2px;
+    margin-right: 1.5px;
   }
 }

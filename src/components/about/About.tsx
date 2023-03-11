@@ -1,5 +1,5 @@
 import React from 'react';
-import './about.css';
+import './about.scss';
 import ME from '../../assets/me-about.png';
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";

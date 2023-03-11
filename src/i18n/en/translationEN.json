@@ -125,6 +125,20 @@
     "services": "Services",
     "background": "Background",
     "contact": "Contact",
+    "legal_notices": "Legal notices",
     "copyrights": "© Yanis GRAILLOT. All rights reserved."
+  },
+
+  "legal_notices": {
+    "title": "Legal notices",
+    "title_description": "In accordance with the provisions of law n° 2004-575 of June 21, 2004 for trust in the digital economy, users of the Ygraillot website are informed of the identity of the various parties involved in its creation and monitoring.",
+    "subtitle_1": "Publisher and responsible for publication",
+    "description_1": "The present website, accessible at the URL ygraillot.com (the “Site”), is published by: Yanis Graillot",
+    "subtitle_2": "Hosting",
+    "description_2": "The Site is hosted by Hostinger International LTD, located at 61 Lordou Vironos Street, 6023 Larnaca, Cyprus, (phone or email contact: https://www.hostinger.fr/contact).\n\nThis host currently holds personal information concerning the author of this site.",
+    "subtitle_3": "Contact me",
+    "description_3": "By phone: +33698588270 \nBy email: graillot.yanis@gmail.com",
+    "subtitle_4": "Personal data",
+    "description_4": "The processing of your personal data is governed by our Privacy Policy, available in the \"Personal Data Protection Charter\" section, in accordance with the General Data Protection Regulation 2016/679 of April 27, 2016 (\"GDPR\")."
   }
 }
