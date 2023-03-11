@@ -6,12 +6,10 @@ import LOGO from '../../assets/Yanis_Logo_V2_2023.svg';
 import HeaderSocials from "./HeaderSocials";
 import { Toaster } from "react-hot-toast";
 import 'animate.css';
-import { useTranslation } from "react-i18next";
-import { Fade, Slide, Roll } from "react-reveal";
+import { Fade, Roll, Slide } from "react-reveal";
+import { t } from "i18next";
 
 function Header() {
-  const { t } = useTranslation();
-
   return (
     <header id="home">
       <Toaster

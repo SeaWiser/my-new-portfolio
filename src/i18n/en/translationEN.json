@@ -116,7 +116,9 @@
       "invalid": " is invalid",
       "too_short": " must contain at least {{minLength}} characters",
       "too_long": " must contain a maximum of {{maxLength}} characters"
-    }
+    },
+    "success_message": "Message sent !",
+    "error_message": "Please wait for {{seconds}} seconds before sending another message."
   },
   "footer": {
     "home": "Home",

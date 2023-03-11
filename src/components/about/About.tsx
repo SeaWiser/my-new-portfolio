@@ -1,17 +1,15 @@
 import React from 'react';
 import './about.scss';
-import ME from '../../assets/me-about.png';
+import ME from '/src/assets/me-about.png';
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
 import 'animate.css';
-import { useTranslation } from "react-i18next";
 import { JackInTheBox } from "react-awesome-reveal";
 import { Fade } from "react-reveal";
+import { t } from "i18next";
 
 function About() {
-  const {t} = useTranslation();
-
   return (
     <section id="about">
       <Fade left>

@@ -2,11 +2,9 @@ import React from 'react';
 import "../../index.scss";
 import "./legal-notices.scss";
 import Footer from "../footer/Footer";
-import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 function LegalNotices() {
-  const {t} = useTranslation();
-
   return (
     <React.Fragment>
       <section id="legal_notices">

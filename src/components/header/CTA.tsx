@@ -1,11 +1,10 @@
 import React from 'react';
 import CV from '../../assets/cv.pdf';
 import 'animate.css';
-import { useTranslation } from "react-i18next";
 import { Fade } from "react-reveal";
+import { t } from "i18next";
 
 function Cta() {
-  const {t} = useTranslation();
   return (
     <div className="cta">
       <Fade left big>

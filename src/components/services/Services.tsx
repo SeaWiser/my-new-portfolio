@@ -2,12 +2,11 @@ import React, { useEffect, useState } from 'react';
 import './services.scss';
 import { BiCheck } from "react-icons/bi";
 import { Fade } from "react-reveal";
-import { useTranslation } from "react-i18next";
+import { t } from "i18next";
 
 function Services() {
   const MEDIUM = 1200;
   const [isMedium, setIsMedium] = useState(window.innerWidth < 1200);
-  const {t} = useTranslation();
 
   useEffect(() => {
     const handleResize = () => {
