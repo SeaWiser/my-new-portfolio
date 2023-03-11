@@ -1,1 +1,0 @@
-declare module 'src/@types/react-router-hash-link';
