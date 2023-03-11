@@ -1,5 +1,5 @@
 import React from 'react';
-import "./background.css";
+import "./background.scss";
 import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 import { AiOutlineStar } from "react-icons/ai"

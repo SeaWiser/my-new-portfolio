@@ -1,43 +1,45 @@
+@import "../../theme/assets/mixins";
+
 .experience__container {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  gap: $md-spacing;
 }
 
 .experience__container .experience__frontend__backend {
-  background: var(--color-bg-variant);
-  padding: 2.4rem 5rem;
-  border-radius: 2rem;
+  background: $color-bg-variant;
+  padding: 2.4rem $xxl-spacing;
+  border-radius: $md-spacing;
   border: 1px solid transparent;
-  transition: var(--transition);
+  transition: $transition;
 }
 
 .experience__container .experience__frontend__backend:hover {
   cursor: default;
   background: transparent;
-  border-color: var(--color-primary-variant);
+  border-color: $color-primary-variant;
 }
 
 .experience__container .experience__frontend__backend h3 {
   text-align: center;
-  margin-bottom: 2rem;
-  color: var(--color-primary);
+  margin-bottom: $md-spacing;
+  color: $color-primary;
 }
 
 .experience__content {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  row-gap: 2rem;
+  row-gap: $md-spacing;
 }
 
 .experience__details {
   display: flex;
-  gap: 1rem;
+  gap: $sm-spacing;
 }
 
 .experience__details-icon {
   margin-top: 6px;
-  color: var(--color-primary);
+  color: $color-primary;
 }
 
 /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
@@ -49,12 +51,12 @@
 
   .experience__container .experience__frontend__backend {
     width: 80%;
-    padding: 2rem;
+    padding: $md-spacing;
     margin: 0 auto;
   }
 
   .experience__content {
-    padding: 1rem;
+    padding: $sm-spacing;
   }
 }
 
@@ -62,12 +64,12 @@
 
 @media screen and (max-width: 600px) {
   .experience__container {
-    gap: 1rem;
+    gap: $sm-spacing;
   }
 
   .experience__container .experience__frontend__backend {
     width: 100%;
-    padding: 2rem 1rem;
+    padding: $md-spacing $sm-spacing;
   }
 }
 
@@ -75,12 +77,12 @@
 
 @media screen and (max-width: 392px) {
   .experience__container .experience__frontend__backend h3 {
-    margin-bottom: 1rem;
+    margin-bottom: $sm-spacing;
   }
 
   .experience__content {
     grid-template-columns: 1fr;
     grid-template-rows: repeat(8, 1fr);
-    row-gap: 1rem;
+    row-gap: $sm-spacing;
   }
 }

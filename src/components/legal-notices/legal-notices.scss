@@ -1,0 +1,23 @@
+@import "../../theme/assets/mixins";
+
+#legal_notices {
+  margin: $xxl-spacing 0 $xxl-spacing 0;
+
+  h1 {
+    text-align: center;
+    margin-bottom: $md-spacing;
+  }
+
+  p {
+    white-space: pre-wrap;
+  }
+
+  h2 + p {
+    margin-bottom: $md-spacing;
+  }
+
+  h2 {
+    text-align: left;
+    margin: 1.5rem 0 $xs-spacing 0;
+  }
+}

@@ -1,3 +1,4 @@
+@import "theme/assets/mixins";
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
 
 * {
@@ -41,17 +42,16 @@ html {
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: var(--color-bg);
-  color: var(--color-white);
+  background: $color-bg url(../src/assets/bg-texture.png);
+  color: $color-white;
   line-height: 1.7;
-  background-image: url(../src/assets/bg-texture.png);
   max-width: 100%;
 }
 
 /* ---------------------- GENERAL STYLES ---------------------- */
 
 .container {
-  width: var(--container-width-lg);
+  width: $container-width-lg;
   margin: 0 auto;
 }
 
@@ -74,47 +74,47 @@ section {
 section h2,
 section h5 {
   text-align: center;
-  color: var(--color-light);
+  color: $color-light;
 }
 
 section h2 {
-  color: var(--color-primary);
-  margin-bottom: 3rem;
+  color: $color-primary;
+  margin-bottom: $lg-spacing;
 }
 
 .text-light {
-  color: var(--color-light);
+  color: $color-light;
 }
 
 a {
-  color: var(--color-primary);
-  transition: var(--transition);
+  color: $color-primary;
+  transition: $transition;
 }
 
 a:hover {
-  color: var(--color-white);
+  color: $color-white;
 }
 
 .btn {
   width: max-content;
   display: inline-block;
-  color: var(--color-primary);
+  color: $color-primary;
   padding: 0.75rem 1.2rem;
   border-radius: 0.4rem;
   cursor: pointer;
-  border: 1px solid var(--color-primary);
-  transition: var(--transition);
+  border: 1px solid $color-primary;
+  transition: $transition;
 }
 
 .btn:hover {
-  background: var(--color-white);
-  color: var(--color-bg);
+  background: $color-white;
+  color: $color-bg;
   border-color: transparent;
 }
 
 .btn-primary {
-  background: var(--color-primary);
-  color: var(--color-bg);
+  background: $color-primary;
+  color: $color-bg;
 }
 
 img {
@@ -127,11 +127,11 @@ img {
 
 @media screen and (max-width: 1024px) {
   .container {
-    width: var(--container-width-md);
+    width: $container-width-md;
   }
 
   section {
-    margin-top: 6rem;
+    margin-top: $xxxl-spacing;
   }
 }
 
@@ -139,11 +139,11 @@ img {
 
 @media screen and (max-width: 600px) {
   .container {
-    width: var(--container-width-sm);
+    width: $container-width-sm;
   }
 
   section {
-    margin-top: 4rem;
+    margin-top: $xl-spacing;
   }
 }
 

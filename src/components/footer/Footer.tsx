@@ -1,9 +1,11 @@
 import React from 'react';
-import './footer.css';
+import './footer.scss';
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
 import LOGO from "../../assets/LOGO_Yanis_LightVersion_23.svg";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
+import { HashLink } from 'react-router-hash-link';
 
 function Footer() {
   const {t} = useTranslation();
@@ -11,7 +13,7 @@ function Footer() {
   return (
     <footer>
       <div className="footer__logo">
-        <a href="/#"><img src={LOGO} alt="Logo"/></a>
+        <HashLink to="/#home"><img src={LOGO} alt="Logo"/></HashLink>
       </div>
       <ul className="permalinks">
         <li><a href="/#">{t('home')}</a></li>
@@ -29,6 +31,8 @@ function Footer() {
            target="_blank"><BsLinkedin/></a>
         <a href="https://github.com/SeaWiser" rel="noreferrer" target="_blank"><FaGithub/></a>
       </div>
+
+      <Link to="/legal-notices">{t('footer.legal_notices')}</Link>
 
       <div className="footer__copyright">
         <small>{t('footer.copyrights')}</small>

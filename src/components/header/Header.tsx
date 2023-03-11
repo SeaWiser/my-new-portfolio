@@ -1,5 +1,5 @@
 import React from 'react';
-import './header.css';
+import './header.scss';
 import CTA from "./CTA";
 import ME from '../../assets/me-transparent.png';
 import LOGO from '../../assets/Yanis_Logo_V2_2023.svg';

@@ -1,49 +1,51 @@
+@import "../../theme/assets/mixins";
+
 .services__container {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 3rem;
+  gap: $lg-spacing;
 }
 
 .service {
   height: fit-content;
-  background: var(--color-bg-variant);
-  border-radius: 2rem;
-  border: 1px solid var(--color-primary);
-  transition: var(--transition);
+  background: $color-bg-variant;
+  border-radius: $md-spacing;
+  border: 1px solid transparent;
+  transition: $transition;
 }
 
 .service:hover {
-  background: transparent;
-  border-color: var(--color-primary-variant);
   cursor: default;
+  background: transparent;
+  border-color: $color-primary-variant;
 }
 
 .service__head {
-  background: var(--color-primary);
-  padding: 2rem;
+  background: $color-primary;
+  padding: $md-spacing;
   border-radius: 2rem;
   box-shadow: 0 2rem 1rem rgba(0, 0, 0, 0.1);
 }
 
 .service__head h3 {
-  color: var(--color-bg);
+  color: $color-bg;
   font-size: 1rem;
   text-align: center;
 }
 
 .service__list {
-  padding: 2rem;
+  padding: $md-spacing;
 }
 
 .service__list li {
   display: flex;
   flex: 2 1 auto;
-  gap: 1rem;
+  gap: $sm-spacing;
   margin-bottom: 0.8rem;
 }
 
 .service__list-icon {
-  color: var(--color-primary);
+  color: $color-primary;
   margin-top: 2px;
 }
 
@@ -56,7 +58,7 @@
 @media screen and (max-width: 1200px) {
   .services__container {
     grid-template-columns: 1fr 1fr;
-    gap: 2rem;
+    gap: $md-spacing;
   }
 
   .service {

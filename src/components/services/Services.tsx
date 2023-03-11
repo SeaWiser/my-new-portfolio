@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import './services.css';
+import './services.scss';
 import { BiCheck } from "react-icons/bi";
 import { Fade } from "react-reveal";
 import { useTranslation } from "react-i18next";

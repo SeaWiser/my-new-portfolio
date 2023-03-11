@@ -46,7 +46,6 @@
     "front_end_skill_5": "Effectuer des tests de compatibilité avec différents navigateurs et résolutions d'écran",
     "front_end_skill_6": "Assurer la cohérence de l'interface utilisateur avec l'identité de la marque",
     "front_end_skill_7": "Documenter les choix de conception et les fonctionnalités pour faciliter les modifications futures",
-
     "back_end_skill_1": "Analyse des besoins fonctionnels du client pour le développement d'applications",
     "back_end_skill_2": "Conception de la structure de la base de données pour stocker les données de l'application",
     "back_end_skill_3": "Développement de la fonctionnalité côté serveur en utilisant des langages de programmation tels que PHP et Javascript avec Node JS",
@@ -54,7 +53,6 @@
     "back_end_skill_5": "Réalisation de tests de performance pour garantir que l'application est rapide et réactive",
     "back_end_skill_6": "Déploiement de l'application sur un serveur en ligne",
     "back_end_skill_7": "Documenter l'architecture de l'application pour faciliter les modifications futures",
-
     "project_management_skill_1": "Planification et organisation des tâches de projet, y compris les délais et les ressources requises",
     "project_management_skill_2": "Établissement d'un calendrier de livraison et de jalons pour le projet",
     "project_management_skill_3": "Communication avec le client tout au long du projet pour garantir la satisfaction",
@@ -67,36 +65,29 @@
     "background": "Parcours",
     "subtitle": "Mon évolution de carrière",
     "title": "Mon parcours",
-
     "school_experience_title_1": "Développeur Web-Intégrateur (Esecad & OpenClassrooms)",
     "school_experience_subtitle_1": "Cours en ligne",
     "school_experience_description_1": "Apprentissage à distance du développement web pour maîtriser les bases des langages HTML, CSS et PHP.",
     "school_experience_date_1": "2018 - 2019",
-
     "work_experience_title_2": "Stage de Développeur Web",
     "work_experience_subtitle_2": "Lyon, France",
     "work_experience_description_2": "Dans un environnement nécessitant l'utilisation du langage PHP, du CMS Wordpress et de la méthodologie agile, j'ai assisté les développeurs avec diverses tâches et réunions.",
     "work_experience_date_2": "Avril 2019 - Mai 2019",
-
     "school_experience_title_3": "Développeur Web et Mobile (WebForce3)",
     "school_experience_subtitle_3": "Lyon, France",
     "school_experience_description_3": "Formation intensive en présentiel. Étude de tous les concepts essentiels pour développer une application web en utilisant différentes technologies, en commençant par le front-end, le back-end, Wordpress et le design web réactif.",
     "school_experience_date_3": "2019 - 2020",
-
-    "diploma_experience_title_4": "Diplôme de Niveau Licence",
+    "diploma_experience_title_4": "Diplôme de Niveau Bac+2",
     "diploma_experience_subtitle_4": "Lyon, France",
-    "diploma_experience_description_4": "Obtention des certifications CNCP en Techniques d'intégration web No. 1447 & Techniques de développement web No. 1448 en développement web et mobile (équivalent à un diplôme de niveau licence).",
-
+    "diploma_experience_description_4": "Obtention des certifications CNCP en Techniques d'intégration web No. 1447 & Techniques de développement web No. 1448 en développement web et mobile (équivalent à un diplôme de niveau bac+2).",
     "school_experience_title_5": "Développeur PHP/Symfony",
     "school_experience_subtitle_5": "Cours en ligne",
     "school_experience_description_5": "Formation à distance en Back-End pour approfondir les compétences actuelles en PHP dans les domaines de la POO et modélisation, puis l'apprentissage du framework Symfony.",
     "school_experience_date_5": "2020 - 2021",
-
     "work_experience_title_6": "Développeur Web Fullstack",
     "work_experience_subtitle_6": "Lyon, France",
     "work_experience_description_6": "Rôle de développeur au sein de l'équipe Web Factory utilisant Angular & Node.JS/Express pour maintenir et résoudre des bugs & développer de nouvelles fonctionnalités pour le site web CRM intranet de l'entreprise. \nProcessus de développement basé sur la méthodologie AGILE. Dans ce contexte, mon rôle était également d'assister aux réunions quotidiennes, de planification de sprint, d'examen de sprint et de rétrospective de sprint pour faciliter le développement et traiter divers problèmes.",
     "work_experience_date_6": "2021 - 2022",
-
     "work_experience_title_7": "Développeur Web Fullstack",
     "work_experience_subtitle_7": "Lyon, France",
     "work_experience_description_7": "Développement d'applications web en utilisant les technologies Angular, Vue, React, PHP et Laravel pour plusieurs clients :\n- Développement de nouvelles fonctionnalités\n- Maintenance et résolution de bugs\n- Répondre aux exigences à travers des maquettes et des spécifications techniques.",
@@ -125,6 +116,19 @@
     "services": "Services",
     "background": "Parcours",
     "contact": "Contact",
+    "legal_notices": "Mentions légales",
     "copyrights": "© Yanis GRAILLOT. Tous droits réservés."
+  },
+  "legal_notices": {
+    "title": "Mentions légales",
+    "title_description": "Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site Ygraillot l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.",
+    "subtitle_1": "Éditeur et responsable de publication",
+    "description_1": "Le présent site, accessible à l’URL ygraillot.com (le « Site »), est édité par : Yanis Graillot",
+    "subtitle_2": "Hébergement",
+    "description_2": "Le Site est hébergé par la société Hostinger International LTD, situé 61 Lordou Vironos Street, 6023 Larnaca, Chypre, (contact téléphonique ou email : https://www.hostinger.fr/contact). \n\n Cet hébergeur détient à ce jour les informations personnelles concernant l'auteur de ce site",
+    "subtitle_3": "Me contacter",
+    "description_3": "Par téléphone : +33698588270 \nPar email : graillot.yanis@gmail.com",
+    "subtitle_4": "Données personnelles",
+    "description_4": "Le traitement de vos données à caractère personnel est régi par notre Charte du respect de la vie privée, disponible depuis la section \"Charte de Protection des Données Personnelles\", conformément au Règlement Général sur la Protection des Données 2016/679 du 27 avril 2016 («RGPD»)."
   }
 }
