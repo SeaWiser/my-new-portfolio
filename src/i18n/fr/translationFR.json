@@ -5,10 +5,6 @@
   "front_end": "Développement Front-End",
   "back_end": "Développement Back-End",
   "home": "Accueil",
-  "description": {
-    "part1": "Ceci est un exemple simple.",
-    "part2": "😉"
-  },
   "header": {
     "title": "Bonjour, je m'appelle",
     "job": "Développeur Fullstack",
