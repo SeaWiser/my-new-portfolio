@@ -1,154 +1,163 @@
 @import "/src/theme/assets/mixins";
 
-header {
+#home {
   padding-top: $xxl-spacing;
-}
 
-.header__container {
-  text-align: center;
-  height: 100%;
-  position: relative;
-}
-
-.titles_with_logo {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: $md-spacing;
-}
-
-.titles_section {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  text-align: justify;
-}
-
-.my_logo img {
-  height: 7rem;
-  width: auto;
-}
-
-/* ----------- CTA ----------- */
-
-.cta {
-  display: flex;
-  gap: 1.2rem;
-  justify-content: space-between;
-}
-
-.cta a {
-  flex-grow: 1;
-}
-
-/* ----------- HEADER SOCIALS ----------- */
-
-.header__socials {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.8rem;
-}
-
-.header__socials::after {
-  content: "";
-  width: 1px;
-  height: 2rem;
-  background: $color-primary;
-  animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
-  animation-duration: 1s; /* don't forget to set a duration! */
-}
-
-/* ----------- ME ----------- */
-
-.me__container {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: auto 1fr;
-  grid-column-gap: 0;
-  grid-row-gap: 3.5rem;
-  margin-top: 3.5rem;
-}
-
-.header__socials__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-start;
-  grid-area: 1 / 1 / 2 / 2;
-}
-
-.me {
-  max-width: 22rem;
-  margin: 0 auto;
-  height: auto; /* réduire la hauteur */
-  grid-area: 1 / 2 / 2 / 3;
-}
-
-.scroll__down__container {
-  grid-area: 1 / 3 / 2 / 4;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  align-items: flex-end;
-}
-
-.scroll__down {
-  writing-mode: vertical-lr;
-  animation-duration: 1s;
-  animation-delay: 0.5s;
-  animation-fill-mode: forwards;
-  animation-name: rotate90;
-  font-weight: 300;
-  font-size: 0.9rem;
-}
-
-.cta__container {
-  margin: 0 auto;
-  max-width: 22rem;
-  width: 100%;
-  grid-area: 2 / 2 / 3 / 3;
-}
-
-.me_image {
-  background: linear-gradient($color-primary, transparent);
-  border-radius: 12rem 12rem 0 0;
-  padding: $xxl-spacing 1.5rem 0 1.5rem;
-}
-
-/* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
-
-@media screen and (max-width: 600px) {
-  header {
-    padding-top: $xl-spacing;
+  .header__container {
+    text-align: center;
+    height: 100%;
+    position: relative;
   }
 
-  .header__socials,
-  .scroll__down {
-    display: none;
-  }
-}
-
-/* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
-
-@media screen and (max-width: 392px) {
-  header {
-    padding-top: $md-spacing;
+  .titles_with_logo {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $md-spacing;
   }
 
   .titles_section {
-    text-align: center;
-  }
-
-  .me {
-    max-width: 15rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: justify;
   }
 
   .my_logo img {
-    height: $xxl-spacing;
+    height: 7rem;
+    width: auto;
+  }
+
+  /* ----------- CTA ----------- */
+
+  .cta {
+    display: flex;
+    gap: 1.2rem;
+    justify-content: space-between;
+  }
+
+  .cta a {
+    flex-grow: 1;
+  }
+
+  /* ----------- HEADER SOCIALS ----------- */
+
+  .header__socials {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.8rem;
+  }
+
+  .header__socials::after {
+    content: "";
+    width: 1px;
+    height: 2rem;
+    background: $color-primary;
+    animation: bounceInUp; /* referring directly to the animation's @keyframe declaration */
+    animation-duration: 1s; /* don't forget to set a duration! */
+  }
+
+  /* ----------- ME ----------- */
+
+  .me__container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto 1fr;
+    grid-column-gap: 0;
+    grid-row-gap: 3.5rem;
+    margin-top: 3.5rem;
+  }
+
+  .header__socials__container {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-start;
+    grid-area: 1 / 1 / 2 / 2;
+  }
+
+  .me {
+    max-width: 22rem;
+    margin: 0 auto;
+    height: auto; /* réduire la hauteur */
+    grid-area: 1 / 2 / 2 / 3;
+  }
+
+  .scroll__down__container {
+    grid-area: 1 / 3 / 2 / 4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+  }
+
+  .scroll__down {
+    writing-mode: vertical-lr;
+    animation-duration: 1s;
+    animation-delay: 0.5s;
+    animation-fill-mode: forwards;
+    animation-name: rotate90;
+    font-weight: 300;
+    font-size: 0.9rem;
   }
 
   .cta__container {
-    max-width: 15rem;
+    margin: 0 auto;
+    max-width: 22rem;
+    width: 100%;
+    grid-area: 2 / 2 / 3 / 3;
+  }
+
+  .me_image {
+    background: linear-gradient($color-primary, transparent);
+    border-radius: 12rem 12rem 0 0;
+    padding: $xxl-spacing 1.5rem 0 1.5rem;
+  }
+
+  /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
+
+  @media screen and (max-width: 600px) {
+    header {
+      padding-top: $xl-spacing;
+    }
+
+    .me__container {
+      display: flex;
+      flex-direction: column;
+      grid-row-gap: 0;
+    }
+
+    .me_image {
+      margin-bottom: 3.5rem;
+    }
+
+    .header__socials__container,
+    .scroll__down {
+      display: none;
+    }
+  }
+
+  /* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
+
+  @media screen and (max-width: 391px) {
+    padding-top: $md-spacing;
+
+    .titles_with_logo {
+      flex-direction: column;
+    }
+
+    .titles_section {
+      text-align: center;
+    }
+
+    .me, .cta__container {
+      max-width: 95%;
+    }
+
+    .my_logo img {
+      height: $xxl-spacing;
+      margin: 0 auto;
+    }
   }
 }

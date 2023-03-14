@@ -60,7 +60,7 @@ class Nav extends Component<{}, ActiveNav> {
 
   render() {
     return (
-      <nav>
+      <nav id="nav">
         <a href="/#" onClick={() => this.setActiveNav('#')}
            className={this.state.activeNav === '#' ? 'active' : ''}><AiOutlineHome/></a>
         <a href={'#about'} onClick={() => this.setActiveNav('#about')}

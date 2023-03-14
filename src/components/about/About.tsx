@@ -42,7 +42,7 @@ function About() {
               </article>
               <article className="about__card">
                 <VscFolderLibrary className="about__icon"/>
-                <h5>Projects</h5>
+                <h5>{t('about.projects_title')}</h5>
                 <small>{t('about.projects_description', {projects: 20})}</small>
               </article>
             </JackInTheBox>

@@ -1,76 +1,73 @@
 @import "/src/theme/assets/mixins";
 
-footer {
-   background: $color-primary;
-   padding: $lg-spacing 0;
-   text-align: center;
-   font-size: 0.9rem;
-   margin-top: 7rem;
- }
+#footer {
+  background: $color-primary;
+  padding: $lg-spacing 0;
+  text-align: center;
+  font-size: 0.9rem;
+  margin-top: 7rem;
 
- footer a {
-   color: $color-bg;
- }
-
- .footer__logo {
-   margin-bottom: $md-spacing;
- }
-
- .footer__logo img {
-   height: auto;
-   max-width: 15rem;
-   margin: 0 auto;
- }
-
- .permalinks {
-   display: flex;
-   flex-wrap: wrap;
-   justify-content: center;
-   gap: $md-spacing;
-   margin: 0 auto;
- }
-
- .footer__socials {
-   display: flex;
-   justify-content: center;
-   gap: $sm-spacing;
-   margin: $lg-spacing 0;
- }
-
- .footer__socials a {
-   display: flex;
-   background: $color-bg;
-   color: $color-white;
-   padding: 0.8rem;
-   border-radius: 0.7rem;
-   border: 1px solid transparent;
- }
-
- .footer__socials a:hover {
-   background: transparent;
-   color: $color-bg;
-   border-color: $color-bg;
- }
-
- .footer__copyright {
-   margin-top: $xs-spacing;
-   margin-bottom: $xl-spacing;
-   color: $color-bg;
- }
-
- /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
-
- @media screen and (max-width: 600px) {
-  .permalinks {
-    flex-direction: column;
-    gap: 1.5rem;
+  a {
+    color: $color-bg;
   }
 
-   .footer__socials {
-     margin-bottom: 2.6rem;
-   }
- }
+  .footer__logo {
+    margin-bottom: $md-spacing;
+  }
 
- @media screen and (max-width: 307px) {
+  .footer__logo img {
+    height: auto;
+    max-width: 15rem;
+    margin: 0 auto;
+  }
 
- }
+  .permalinks {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: $md-spacing;
+    margin: 0 auto;
+  }
+
+  .footer__socials {
+    display: flex;
+    justify-content: center;
+    gap: $sm-spacing;
+    margin: $lg-spacing 0;
+  }
+
+  .footer__socials a {
+    display: flex;
+    background: $color-bg;
+    color: $color-white;
+    padding: 0.8rem;
+    border-radius: 0.7rem;
+    border: 1px solid transparent;
+  }
+
+  .footer__socials a:hover {
+    background: transparent;
+    color: $color-bg;
+    border-color: $color-bg;
+  }
+
+  .footer__copyright {
+    margin-top: $xs-spacing;
+    margin-bottom: $xl-spacing;
+    color: $color-bg;
+  }
+
+
+  /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
+
+  @media screen and (max-width: 600px) {
+    .permalinks {
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .footer__socials {
+      margin-bottom: 2.6rem;
+    }
+  }
+}

@@ -46,6 +46,8 @@ function Contact() {
     formState: {
       errors,
       isSubmitting,
+      isDirty,
+      isValid,
     },
     reset
   } = useForm({
@@ -197,7 +199,7 @@ function Contact() {
             </div>
           </Fade>
           <Fade bottom big>
-            <button type="submit" className="btn btn-primary submit-btn" disabled={isSubmitting}>{t('contact.send_message')}</button>
+            <button type="submit" className="btn btn-primary" disabled={!isDirty || !isValid || isSubmitting}>{t('contact.send_message')}</button>
           </Fade>
         </form>
       </div>

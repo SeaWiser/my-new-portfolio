@@ -9,7 +9,7 @@ import { t } from "i18next";
 
 function Footer() {
   return (
-    <footer>
+    <footer id="footer">
       <div className="footer__logo">
         <HashLink to="/#home"><img src={LOGO} alt="Logo"/></HashLink>
       </div>

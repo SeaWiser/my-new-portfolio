@@ -1,88 +1,117 @@
 @import "/src/theme/assets/mixins";
 
-.experience__container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: $md-spacing;
-}
-
-.experience__container .experience__frontend__backend {
-  background: $color-bg-variant;
-  padding: 2.4rem $xxl-spacing;
-  border-radius: $md-spacing;
-  border: 1px solid transparent;
-  transition: $transition;
-}
-
-.experience__container .experience__frontend__backend:hover {
-  cursor: default;
-  background: transparent;
-  border-color: $color-primary-variant;
-}
-
-.experience__container .experience__frontend__backend h3 {
-  text-align: center;
-  margin-bottom: $md-spacing;
-  color: $color-primary;
-}
-
-.experience__content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  row-gap: $md-spacing;
-}
-
-.experience__details {
-  display: flex;
-  gap: $sm-spacing;
-}
-
-.experience__details-icon {
-  margin-top: 6px;
-  color: $color-primary;
-}
-
-/* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
-
-@media screen and (max-width: 1024px) {
+#experience {
   .experience__container {
-    grid-template-columns: 1fr;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    justify-content: center;
+    gap: $md-spacing;
+
+    .experience__frontend__backend {
+      background: $color-bg-variant;
+      padding: 2.4rem $xl-spacing;
+      border-radius: $md-spacing;
+      border: 1px solid transparent;
+      transition: $transition;
+
+      &:hover {
+        cursor: default;
+        background: transparent;
+        border-color: $color-primary-variant;
+      }
+    }
+
+    .experience__frontend__backend h3 {
+      text-align: center;
+      margin-bottom: $md-spacing;
+      color: $color-primary;
+    }
+
+    .experience__details {
+      display: flex;
+      gap: $sm-spacing;
+    }
+
+    .experience__content {
+      display: grid;
+      gap: $md-spacing;
+      justify-items: center;
+      justify-content: center;
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: 1fr;
+    }
+
+    .experience__content__for_very_small__devices {
+      display: none;
+    }
+
+    .experience__content__col {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+
+    .experience__details {
+      display: flex;
+    }
+
+    .experience__details-icon {
+      margin-top: 6px;
+      color: $color-primary;
+    }
   }
 
-  .experience__container .experience__frontend__backend {
-    width: 80%;
-    padding: $md-spacing;
-    margin: 0 auto;
+  /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
+
+  @media screen and (max-width: 1024px) {
+    .experience__container {
+      grid-template-columns: 1fr;
+    }
+
+    .experience__container .experience__frontend__backend {
+      width: 80%;
+      padding: $md-spacing;
+      margin: 0 auto;
+    }
+
+    .experience__content {
+      padding: $sm-spacing;
+    }
   }
 
-  .experience__content {
-    padding: $sm-spacing;
-  }
-}
+  /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
 
-/* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
+  @media screen and (max-width: 600px) {
+    .experience__container {
+      gap: $sm-spacing;
 
-@media screen and (max-width: 600px) {
-  .experience__container {
-    gap: $sm-spacing;
-  }
-
-  .experience__container .experience__frontend__backend {
-    width: 100%;
-    padding: $md-spacing $sm-spacing;
-  }
-}
-
-/* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
-
-@media screen and (max-width: 392px) {
-  .experience__container .experience__frontend__backend h3 {
-    margin-bottom: $sm-spacing;
+      .experience__frontend__backend {
+        width: 100%;
+        padding: $md-spacing $sm-spacing;
+      }
+    }
   }
 
-  .experience__content {
-    grid-template-columns: 1fr;
-    grid-template-rows: repeat(8, 1fr);
-    row-gap: $sm-spacing;
+  /* -------------- MEDIA QUERIES (VERY SMALL DEVICES) -------------- */
+
+  @media screen and (max-width: 360px) {
+    .experience__container {
+      .experience__content {
+        display: none;
+      }
+
+      .experience__content__for_very_small__devices {
+        display: flex;
+        flex-wrap: wrap;
+        gap: $md-spacing;
+        justify-items: center;
+        justify-content: center;
+      }
+
+      .experience__content__col {
+        display: flex;
+        flex-direction: column;
+      }
+    }
   }
 }

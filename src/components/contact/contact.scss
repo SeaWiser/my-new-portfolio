@@ -1,104 +1,105 @@
 @import "/src/theme/assets/mixins";
 
-.container.contact__container {
-  width: 58%;
-  display: grid;
-  grid-template-columns: 30% 58%;
-  gap: 12%;
-}
-
-.contact__options {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.contact__option {
-  background: $color-bg-variant;
-  padding: 1.2rem;
-  border-radius: 1.2rem;
-  text-align: center;
-  border: 1px solid transparent;
-  transition: $transition;
-}
-
-.contact__option:hover {
-  background: transparent;
-  border-color: $color-primary-variant;
-}
-
-.contact__option-icon {
-  font-size: 1.5rem;
-  margin-bottom: $xs-spacing;
-}
-
-.contact__option a {
-  margin-top: 0.7rem;
-  display: inline-block;
-  font-size: 0.8rem;
-}
-
-/* --------------- FORM --------------- */
-
-form {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-input,
-textarea {
-  width: 100%;
-  padding: 1.5rem;
-  border-radius: 0.5rem;
-  background: transparent;
-  border: 2px solid $color-primary-variant;
-  resize: none;
-  color: $color-white;
-}
-
-textarea {
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-button[disabled] {
-  opacity: 0.5;
-  cursor: not-allowed;
-  pointer-events: none;
-}
-
-.form-group {
-  display: flex;
-  flex-direction: column;
-  gap: 0.25rem
-}
-
-.has-error {
-  border: 1px solid red;
-}
-
-input.has-error {
-  margin-bottom: $xs-spacing;
-}
-
-.error-message {
-  color: red;
-}
-
-
-/* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
-
-@media screen and (max-width: 1024px) {
+#contact {
   .container.contact__container {
-    grid-template-columns: 1fr;
-    gap: $md-spacing;
+    width: 58%;
+    display: grid;
+    grid-template-columns: 30% 58%;
+    gap: 12%;
   }
-}
 
-/* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
+  .contact__options {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
 
-@media screen and (max-width: 600px) {
-  .container.contact__container {
-    width: $container-width-sm;
+  .contact__option {
+    background: $color-bg-variant;
+    padding: 1.2rem;
+    border-radius: 1.2rem;
+    text-align: center;
+    border: 1px solid transparent;
+    transition: $transition;
+
+    &:hover {
+      background: transparent;
+      border-color: $color-primary-variant;
+    }
+  }
+
+  .contact__option-icon {
+    font-size: 1.5rem;
+    margin-bottom: $xs-spacing;
+  }
+
+  .contact__option a {
+    margin-top: 0.7rem;
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+
+  /* --------------- FORM --------------- */
+
+  form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.2rem;
+  }
+
+  input,
+  textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.81rem;
+    border: 2px solid $color-primary-variant;
+    resize: none;
+    color: $color-white;
+  }
+
+  textarea {
+    vertical-align: top;
+  }
+
+  button[disabled] {
+    opacity: 0.5 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem
+  }
+
+  .has-error {
+    border: 1px solid red;
+    margin-bottom: $xs-spacing;
+  }
+
+  .error-message {
+    color: red;
+  }
+
+
+  /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
+
+  @media screen and (max-width: 1024px) {
+    .container.contact__container {
+      grid-template-columns: 1fr;
+      gap: $md-spacing;
+    }
+  }
+
+  /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
+
+  @media screen and (max-width: 600px) {
+    .container.contact__container {
+      width: $container-width-sm;
+    }
   }
 }
