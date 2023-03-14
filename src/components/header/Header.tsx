@@ -1,8 +1,7 @@
 import React from 'react';
 import './header.scss';
 import CTA from "./CTA";
-import ME_PNG from '/src/assets/me-transparent.png';
-import ME_WEBP from '/src/assets/me-transparent.webp';
+import ME_SVG from '/src/assets/me-transparent.svg';
 import LOGO from '../../assets/Yanis_Logo_V2_2023.svg';
 import HeaderSocials from "./HeaderSocials";
 import { Toaster } from "react-hot-toast";
@@ -43,10 +42,7 @@ function Header() {
           <Slide bottom>
             <div className="me">
               <div className="me_image">
-                <picture>
-                  <source srcSet={ME_WEBP} type="image/webp"/>
-                  <img src={ME_PNG} alt="me"/>
-                </picture>
+                <img src={ME_SVG} alt=""/>
               </div>
             </div>
           </Slide>
