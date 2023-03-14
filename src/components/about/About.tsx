@@ -1,6 +1,7 @@
 import React from 'react';
 import './about.scss';
-import ME from '/src/assets/me-about.png';
+import ME_PNG from '/src/assets/me-about.png';
+import ME_WEBP from '/src/assets/me-about.webp';
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
@@ -22,7 +23,10 @@ function About() {
         <Fade bottom big>
           <div className="about__me">
             <div className="about__me-image">
-              <img src={ME} alt="About Me"/>
+              <picture>
+                <source srcSet={ME_WEBP} type="image/webp"/>
+                <img src={ME_PNG} alt="me"/>
+              </picture>
             </div>
           </div>
         </Fade>

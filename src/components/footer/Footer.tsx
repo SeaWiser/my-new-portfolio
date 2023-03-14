@@ -11,7 +11,9 @@ function Footer() {
   return (
     <footer id="footer">
       <div className="footer__logo">
-        <HashLink to="/#home"><img src={LOGO} alt="Logo"/></HashLink>
+        <HashLink to="/#home">
+          <img src={LOGO} alt="Logo"/>
+        </HashLink>
       </div>
       <ul className="permalinks">
         <li><a href="/#">{t('home')}</a></li>
