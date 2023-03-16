@@ -103,6 +103,8 @@
     "contact": "Contact",
     "subtitle": "Get In Touch",
     "title": "Contact Me",
+    "phone": "Phone",
+    "call": "Call",
     "send_message": "Send a message",
     "form_full_name": "Your Full Name",
     "form_email": "Your Email",

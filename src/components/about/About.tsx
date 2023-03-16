@@ -20,12 +20,12 @@ function About() {
 
   return (
     <section id="about">
-      <Fade left>
-        <h5>{t('about.subtitle')}</h5>
-      </Fade>
-      <Fade right>
-        <h2>{t('about.title')}</h2>
-      </Fade>
+        <Fade left>
+          <h5>{t('about.subtitle')}</h5>
+        </Fade>
+        <Fade right>
+          <h2>{t('about.title')}</h2>
+        </Fade>
       <div className="container about__container">
         <Fade bottom big>
           <div className="about__me">
@@ -74,7 +74,7 @@ function About() {
           <Fade right>
             <p>{t('about.description')}</p>
           </Fade>
-          <Fade bottom big>
+          <Fade bottom>
             <a href={"#contact"} className="btn btn-primary">{t('talk')}</a>
           </Fade>
         </div>

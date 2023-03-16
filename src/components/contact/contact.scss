@@ -96,6 +96,12 @@
     }
   }
 
+  @media screen and (max-width: 1500px) {
+    .container.contact__container {
+      width: 70%;
+    }
+  }
+
   /* -------------- MEDIA QUERIES (MEDIUM DEVICES) -------------- */
 
   @media screen and (max-width: 1024px) {

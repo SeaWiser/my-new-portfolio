@@ -2,11 +2,21 @@
 
 #home {
   padding-top: $xxl-spacing;
+  margin-bottom: $xxl-spacing;
 
   .header__container {
     text-align: center;
-    height: 100%;
-    position: relative;
+  }
+
+  picture {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    object-fit: cover;
+  }
+
+  .no-image-loaded {
+    height: 500px;
   }
 
   .titles_with_logo {
@@ -79,8 +89,8 @@
 
   .me {
     max-width: 22rem;
+    min-height: 100%;
     margin: 0 auto;
-    height: auto; /* réduire la hauteur */
     grid-area: 1 / 2 / 2 / 3;
   }
 

@@ -32,13 +32,13 @@ function Header() {
           </Fade>
           <div className="titles_section">
             <Fade top>
-              <h5 className="animate__animated animate__fadeInDown">{t('header.title')}</h5>
+              <h5>{t('header.title')}</h5>
             </Fade>
             <Fade right>
-              <h1 className="animate__animated animate__fadeInRight">Yanis Graillot</h1>
+              <h1>Yanis Graillot</h1>
             </Fade>
             <Fade bottom>
-              <h5 className="text-light animate__animated animate__fadeInUp">{t('header.job')}</h5>
+              <h5>{t('header.job')}</h5>
             </Fade>
           </div>
         </div>
@@ -56,7 +56,7 @@ function Header() {
                     <img src={ME_PNG} alt="Me" />
                   </picture>
                 ) : (
-                  <picture>
+                  <picture className="no-image-loaded">
                     <source srcSet={ME_WEBP} type="image/webp" />
                     <source srcSet={ME_PNG} type="image/png" />
                     <img src={ME_PNG} alt="Me" onLoad={handleImageLoad} style={{ display: 'none' }} />

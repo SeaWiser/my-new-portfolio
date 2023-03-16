@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { Suspense, useEffect } from 'react';
 import Header from "./components/header/Header";
 import Nav from "./components/nav/Nav";
 import About from "./components/about/About";
@@ -17,14 +17,16 @@ function App() {
   }, []);
   return (
     <>
-      <Header/>
-      <Nav/>
-      <About/>
-      <Experience/>
-      <Services/>
-      <Background/>
-      <Contact/>
-      <Footer/>
+      <Suspense>
+        <Header/>
+        <Nav/>
+        <About/>
+        <Experience/>
+        <Services/>
+        <Background/>
+        <Contact/>
+        <Footer/>
+      </Suspense>
     </>
   );
 }

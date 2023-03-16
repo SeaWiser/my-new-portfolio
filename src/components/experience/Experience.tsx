@@ -24,12 +24,12 @@ import { Fade } from "react-reveal";
 function Experience() {
   return (
     <section id="experience">
-      <div className="animate__animated animate__fadeInLeft">
+      <Fade left>
         <h5>{t('experience.subtitle')}</h5>
-      </div>
-      <div className="animate__animated animate__fadeInRight">
+      </Fade>
+      <Fade right>
         <h2>{t('experience.title')}</h2>
-      </div>
+      </Fade>
 
       <div className="container experience__container">
         <Fade left>

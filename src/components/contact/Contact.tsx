@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import './contact.scss';
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
-import { BsWhatsapp } from "react-icons/bs";
+import { BsTelephoneOutbound } from "react-icons/bs";
 import { JackInTheBox } from "react-awesome-reveal";
 import { Fade } from "react-reveal";
 import { useForm } from "react-hook-form";
 import { Form } from "../../models/contact-form/form";
 import { toast } from "react-hot-toast";
-import emailjs, { EmailJSResponseStatus } from 'emailjs-com';
+import emailjs from 'emailjs-com';
 import { t } from "i18next";
 
 function Contact() {
@@ -18,7 +18,7 @@ function Contact() {
   const EMAIL_MAX_LENGTH = 100;
   const MESSAGE_MIN_LENGTH = 10;
   const MESSAGE_MAX_LENGTH = 400;
-  const EMAIL_PATTERN = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/;
+  const EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
 
   let countdownInterval: number | null = null;
   const [lastMessageSentTime, setLastMessageSentTime] = useState(0);
@@ -101,7 +101,7 @@ function Contact() {
             <article className="contact__option">
               <MdOutlineEmail className="contact__option-icon"/>
               <h4>Email</h4>
-              <h5>graillot.yanis@gmail.com</h5>
+              <h5>contact@ygraillot.com</h5>
               <a href="mailto:graillot.yanis@gmail.com" rel="noreferrer" target="_blank">{t('contact.send_message')}</a>
             </article>
             <article className="contact__option">
@@ -111,10 +111,10 @@ function Contact() {
               <a href="https://m.me/100090831364043" rel="noreferrer" target="_blank">{t('contact.send_message')}</a>
             </article>
             <article className="contact__option">
-              <BsWhatsapp className="contact__option-icon"/>
-              <h4>WhatsApp</h4>
+              <BsTelephoneOutbound className="contact__option-icon"/>
+              <h4>{t('contact.phone')}</h4>
               <h5>+33698588270</h5>
-              <a href="https://api.whatsapp.com/send?phone+33698588270">{t('contact.send_message')}</a>
+              <a href="tel:+33698588270">{t('contact.call')}</a>
             </article>
           </JackInTheBox>
         </div>
@@ -198,7 +198,8 @@ function Contact() {
             </div>
           </Fade>
           <Fade bottom big>
-            <button type="submit" className="btn btn-primary" disabled={!isDirty || !isValid || isSubmitting}>{t('contact.send_message')}</button>
+            <button type="submit" className="btn btn-primary"
+                    disabled={!isDirty || !isValid || isSubmitting}>{t('contact.send_message')}</button>
           </Fade>
         </form>
       </div>

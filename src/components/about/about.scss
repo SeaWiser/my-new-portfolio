@@ -1,6 +1,8 @@
 @import "/src/theme/assets/mixins";
 
 #about {
+  margin-top: 0;
+
   .about__container {
     display: grid;
     grid-template-columns: 35% 50%;
