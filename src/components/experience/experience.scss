@@ -66,16 +66,30 @@
   @media screen and (max-width: 1024px) {
     .experience__container {
       grid-template-columns: 1fr;
-    }
 
-    .experience__container .experience__frontend__backend {
-      width: 80%;
-      padding: $md-spacing;
-      margin: 0 auto;
-    }
+      .experience__frontend__backend {
+        width: 80%;
+        padding: $md-spacing;
+        margin: 0 auto;
+      }
 
-    .experience__content {
-      padding: $sm-spacing;
+      .experience__content {
+        padding: $sm-spacing;
+      }
+    }
+  }
+
+  /* -------------- FOR OLDER BROWSERS -------------- */
+
+  @supports not (gap: 1px) {
+    .experience__container {
+      .experience__details > * + * {
+        margin-left: $sm-spacing;
+      }
+
+      .experience__content__col > * + * {
+        margin-top: 2rem;
+      }
     }
   }
 
@@ -102,9 +116,6 @@
 
       .experience__content__for_very_small__devices {
         display: flex;
-        flex-wrap: wrap;
-        gap: $md-spacing;
-        justify-items: center;
         justify-content: center;
       }
 

@@ -115,6 +115,22 @@
     padding: $xxl-spacing 1.5rem 0 1.5rem;
   }
 
+  /* -------------- FOR OLDER BROWSERS -------------- */
+
+  @supports not (gap: 1px) {
+    .titles_with_logo > * + * {
+      margin-left: $md-spacing;
+    }
+
+    .cta > * + * {
+      margin-left: 1.2rem;
+    }
+
+    .header__socials > * + * {
+      margin-top: 0.8rem;
+    }
+  }
+
   /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
 
   @media screen and (max-width: 600px) {
@@ -151,6 +167,10 @@
       text-align: center;
     }
 
+    .cta {
+      flex-wrap: wrap;
+    }
+
     .me, .cta__container {
       max-width: 95%;
     }
@@ -158,6 +178,15 @@
     .my_logo img {
       height: $xxl-spacing;
       margin: 0 auto;
+    }
+
+    /* -------------- FOR OLDER BROWSERS -------------- */
+
+    @supports not (gap: 1px) {
+      .titles_with_logo > * + * {
+        margin-left: 0;
+        margin-top: $md-spacing;
+      }
     }
   }
 }

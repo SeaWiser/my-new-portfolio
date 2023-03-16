@@ -70,8 +70,7 @@ function Contact() {
 
     if (timeSinceLastMessage > WAIT_TIME) {
       emailjs.send('service_gvxffb2', 'template_0nry3wu', dataForm, 'UPSI5R6e0J5PWUXl5').then(
-        (result: EmailJSResponseStatus) => {
-          console.log(result.text);
+        () => {
           toast.success(t('contact.success_message'));
           reset();
           setLastMessageSentTime(currentTime);

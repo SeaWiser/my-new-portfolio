@@ -175,7 +175,7 @@ function Experience() {
                   <SiPhp className="experience__details-icon"/>
                   <div className="experience__details__text">
                     <h4>PHP</h4>
-                    <small className="text-light">{t('experience.basic')}</small>
+                    <small className="text-light">{t('experience.intermediate')}</small>
                   </div>
                 </article>
                 <article className="experience__details">

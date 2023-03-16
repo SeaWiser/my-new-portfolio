@@ -31,4 +31,12 @@
     background: $color-primary;
     color: $color-bg;
   }
+
+  /* -------------- FOR OLDER BROWSERS -------------- */
+
+  @supports not (gap: 1px) {
+    & > * + * {
+      margin-left: 0.8rem;
+    }
+  }
 }

@@ -1,6 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './about.scss';
-import ME_SVG from '/src/assets/me-about.svg';
 import { FaAward } from "react-icons/fa";
 import { FiUsers } from "react-icons/fi";
 import { VscFolderLibrary } from "react-icons/vsc";
@@ -8,8 +7,17 @@ import 'animate.css';
 import { JackInTheBox } from "react-awesome-reveal";
 import { Fade } from "react-reveal";
 import { t } from "i18next";
+import ME_ABOUT_PNG from '/src/assets/me-about.png';
+import ME_ABOUT_WEBP from "/src/assets/me-about.webp";
+import { Blurhash } from "react-blurhash";
 
 function About() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <section id="about">
       <Fade left>
@@ -22,7 +30,22 @@ function About() {
         <Fade bottom big>
           <div className="about__me">
             <div className="about__me-image">
-              <img src={ME_SVG} alt="me"/>
+              {imageLoaded ? (
+                <picture>
+                  <source srcSet={ME_ABOUT_WEBP} type="image/webp"/>
+                  <source srcSet={ME_ABOUT_PNG} type="image/png"/>
+                  <img src={ME_ABOUT_PNG} alt="About Me"/>
+                </picture>
+              ) : (
+                <>
+                  <Blurhash className="blurhash" hash="LgFP?TV[2ztQX7j[n$a}15oy-TV["/>
+                  <picture>
+                    <source srcSet={ME_ABOUT_WEBP} type="image/webp"/>
+                    <source srcSet={ME_ABOUT_PNG} type="image/png"/>
+                    <img src={ME_ABOUT_PNG} alt="Me" onLoad={handleImageLoad} style={{display: 'none'}}/>
+                  </picture>
+                </>
+              )}
             </div>
           </div>
         </Fade>

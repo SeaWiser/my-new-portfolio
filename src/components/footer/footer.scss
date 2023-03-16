@@ -57,6 +57,17 @@
     color: $color-bg;
   }
 
+  /* -------------- FOR OLDER BROWSERS -------------- */
+
+  @supports not (gap: 1px) {
+    .permalinks > * + * {
+      margin-left: $md-spacing;;
+    }
+
+    .footer__socials > * + * {
+      margin-left: $sm-spacing;
+    }
+  }
 
   /* -------------- MEDIA QUERIES (SMALL DEVICES) -------------- */
 
@@ -68,6 +79,15 @@
 
     .footer__socials {
       margin-bottom: 2.6rem;
+    }
+
+    /* -------------- FOR OLDER BROWSERS -------------- */
+
+    @supports not (gap: 1px) {
+      .permalinks > * + * {
+        margin-left: 0;
+        margin-top: 1.5rem;
+      }
     }
   }
 }

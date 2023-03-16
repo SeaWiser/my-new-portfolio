@@ -18,9 +18,22 @@
     background: linear-gradient(45deg, transparent, $color-primary, transparent);
   }
 
+  .blurhash {
+    display: block !important;
+    width: 100% !important;
+    height: 100% !important;
+  }
+
+  .blurhash canvas {
+    display: block;
+    position: unset !important;
+    border-radius: 2rem;
+  }
+
   .about__me-image {
     border-radius: 2rem;
     overflow: hidden;
+    width: 100%;
     transform: rotate(10deg);
     transition: $transition;
 

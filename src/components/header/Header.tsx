@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './header.scss';
 import CTA from "./CTA";
-import ME_SVG from '/src/assets/me-transparent.svg';
+import ME_PNG from '/src/assets/me-transparent.png';
+import ME_WEBP from '/src/assets/me-transparent.webp';
 import LOGO from '../../assets/Yanis_Logo_V2_2023.svg';
 import HeaderSocials from "./HeaderSocials";
 import { Toaster } from "react-hot-toast";
@@ -10,6 +11,12 @@ import { Fade, Roll, Slide } from "react-reveal";
 import { t } from "i18next";
 
 function Header() {
+  const [imageLoaded, setImageLoaded] = useState(false);
+
+  const handleImageLoad = () => {
+    setImageLoaded(true);
+  };
+
   return (
     <header id="home">
       <Toaster
@@ -39,10 +46,22 @@ function Header() {
           <div className="header__socials__container">
             <HeaderSocials/>
           </div>
-          <Slide bottom>
+          <Slide bottom when={imageLoaded}>
             <div className="me">
               <div className="me_image">
-                <img src={ME_SVG} alt=""/>
+                {imageLoaded ? (
+                  <picture>
+                    <source srcSet={ME_WEBP} type="image/webp" />
+                    <source srcSet={ME_PNG} type="image/png" />
+                    <img src={ME_PNG} alt="Me" />
+                  </picture>
+                ) : (
+                  <picture>
+                    <source srcSet={ME_WEBP} type="image/webp" />
+                    <source srcSet={ME_PNG} type="image/png" />
+                    <img src={ME_PNG} alt="Me" onLoad={handleImageLoad} style={{ display: 'none' }} />
+                  </picture>
+                )}
               </div>
             </div>
           </Slide>
@@ -54,7 +73,7 @@ function Header() {
             </Roll>
           </div>
           <div className="cta__container">
-            <CTA/>
+            {imageLoaded && <CTA/>}
           </div>
         </div>
       </div>
