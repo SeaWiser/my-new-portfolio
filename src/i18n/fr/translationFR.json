@@ -1,6 +1,6 @@
 {
   "language": "fr",
-  "title": "Mon Portfolio",
+  "title": "Yanis Graillot | Développeur Web Fullstack",
   "talk": "Parlons-en",
   "front_end": "Développement Front-End",
   "back_end": "Développement Back-End",
@@ -108,6 +108,7 @@
       "too_long": " doit contenir au maximum {{maxLength}} caractères"
     },
     "success_message": "Message envoyé !",
+    "error_message_generic": "Une erreur est survenue. Veuillez réessayer plus tard",
     "error_message": "Veuillez attendre {{seconds}} secondes avant d'envoyer un nouveau message."
   },
   "footer": {
@@ -121,15 +122,27 @@
     "copyrights": "© Yanis GRAILLOT. Tous droits réservés."
   },
   "legal_notices": {
-    "title": "Mentions légales",
+    "title": "Mentions légales et Confidentialité",
     "title_description": "Conformément aux dispositions de la loi n° 2004-575 du 21 juin 2004 pour la confiance en l'économie numérique, il est précisé aux utilisateurs du site Ygraillot l'identité des différents intervenants dans le cadre de sa réalisation et de son suivi.",
     "subtitle_1": "Éditeur et responsable de publication",
     "description_1": "Le présent site, accessible à l’URL ygraillot.com (le « Site »), est édité par : Yanis Graillot",
     "subtitle_2": "Hébergement",
-    "description_2": "Le Site est hébergé par la société Hostinger International LTD, situé 61 Lordou Vironos Street, 6023 Larnaca, Chypre, (contact téléphonique ou email : https://www.hostinger.fr/contact). \n\n Cet hébergeur détient à ce jour les informations personnelles concernant l'auteur de ce site",
+    "description_2": "Le Site est hébergé par la société Hostinger International LTD, situé 61 Lordou Vironos Street, 6023 Larnaca, Chypre, (contact téléphonique ou email : https://www.hostinger.fr/contact). \n\nCet hébergeur détient à ce jour les informations personnelles concernant l'auteur de ce site.",
     "subtitle_3": "Me contacter",
     "description_3": "Par téléphone : +33698588270 \nPar email : graillot.yanis@gmail.com",
-    "subtitle_4": "Données personnelles",
-    "description_4": "Le traitement de vos données à caractère personnel est régi par notre Charte du respect de la vie privée, disponible depuis la section \"Charte de Protection des Données Personnelles\", conformément au Règlement Général sur la Protection des Données 2016/679 du 27 avril 2016 («RGPD»)."
+    "subtitle_4": "Politique de confidentialité",
+    "description_4": "Nous nous engageons à protéger votre vie privée et à respecter les règles en vigueur relatives à la protection des données personnelles, y compris le Règlement général sur la protection des données (RGPD).",
+    "subtitle_5": "Collecte et utilisation des informations personnelles",
+    "description_5": "Nous collectons uniquement les informations personnelles que vous nous fournissez volontairement via notre formulaire de contact, qui inclut votre nom, adresse e-mail et message. Nous utilisons ces informations pour répondre à vos demandes de renseignements et pour vous contacter si nécessaire.\n\nNous ne partagerons jamais vos informations personnelles avec des tiers sans votre consentement explicite, sauf si la loi l'exige ou si cela est nécessaire pour protéger vos intérêts vitaux.",
+    "subtitle_6": "Protection des informations personnelles",
+    "description_6": "Nous prenons des mesures de sécurité raisonnables pour protéger vos informations personnelles contre tout accès non autorisé, divulgation, modification ou destruction. Nous utilisons des protocoles de sécurité standard pour protéger les informations sensibles transmises via Internet.",
+    "subtitle_7": "Vos droits",
+    "description_7": "Vous avez le droit d'accéder à vos informations personnelles que nous avons collectées et de demander à les corriger, les supprimer ou les restreindre. Vous pouvez également vous opposer à l'utilisation de vos informations personnelles à des fins de marketing direct ou demander leur portabilité.",
+    "subtitle_8": "Cookies",
+    "description_8": "Nous n'utilisons pas de cookies sur notre site.",
+    "subtitle_9": "Responsable de la protection des données",
+    "description_9": "Nous n'avons pas nommé de responsable de la protection des données car nous ne traitons pas régulièrement des données à grande échelle ni ne collectons des données sensibles.",
+    "subtitle_10": "Contact",
+    "description_10": "Si vous avez des questions ou des préoccupations concernant notre politique de confidentialité ou notre utilisation de vos informations personnelles, veuillez nous contacter via notre formulaire de contact."
   }
 }

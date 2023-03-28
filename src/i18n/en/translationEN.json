@@ -1,6 +1,6 @@
 {
   "language": "en",
-  "title": "My Portfolio",
+  "title": "Yanis Graillot | Fullstack Web Developer",
   "talk": "Let's talk",
   "front_end": "Front-End Development",
   "back_end": "Back-End Development",
@@ -117,6 +117,7 @@
       "too_long": " must contain a maximum of {{maxLength}} characters"
     },
     "success_message": "Message sent !",
+    "error_message_generic": "An error occurred. Please try again later",
     "error_message": "Please wait for {{seconds}} seconds before sending another message."
   },
   "footer": {
@@ -131,15 +132,27 @@
   },
 
   "legal_notices": {
-    "title": "Legal notices",
+    "title": "Legal notices and Privacy",
     "title_description": "In accordance with the provisions of law n° 2004-575 of June 21, 2004 for trust in the digital economy, users of the Ygraillot website are informed of the identity of the various parties involved in its creation and monitoring.",
     "subtitle_1": "Publisher and responsible for publication",
-    "description_1": "The present website, accessible at the URL ygraillot.com (the “Site”), is published by: Yanis Graillot",
+    "description_1": "The present website, accessible at the URL ygraillot.com (the “Site”), is published by : Yanis Graillot",
     "subtitle_2": "Hosting",
     "description_2": "The Site is hosted by Hostinger International LTD, located at 61 Lordou Vironos Street, 6023 Larnaca, Cyprus, (phone or email contact: https://www.hostinger.fr/contact).\n\nThis host currently holds personal information concerning the author of this site.",
     "subtitle_3": "Contact me",
-    "description_3": "By phone: +33698588270 \nBy email: graillot.yanis@gmail.com",
-    "subtitle_4": "Personal data",
-    "description_4": "The processing of your personal data is governed by our Privacy Policy, available in the \"Personal Data Protection Charter\" section, in accordance with the General Data Protection Regulation 2016/679 of April 27, 2016 (\"GDPR\")."
+    "description_3": "By phone : +33698588270 \nBy email : graillot.yanis@gmail.com",
+    "subtitle_4": "Privacy Policy",
+    "description_4": "We are committed to protecting your privacy and complying with the rules on the protection of personal data, including the General Data Protection Regulation (GDPR).",
+    "subtitle_5": "Collection and use of personal information",
+    "description_5": "We only collect personal information that you voluntarily provide to us via our contact form, which includes your name, email address, and message. We use this information to respond to your inquiries and to contact you if necessary.\n\nWe will never share your personal information with third parties without your explicit consent, except where required by law or where it is necessary to protect your vital interests.",
+    "subtitle_6": "Protection of personal information",
+    "description_6": "We take reasonable security measures to protect your personal information against unauthorized access, disclosure, modification, or destruction. We use standard security protocols to protect sensitive information transmitted over the internet.",
+    "subtitle_7": "Your rights",
+    "description_7": "You have the right to access your personal information that we have collected and to request that it be corrected, deleted, or restricted. You can also object to the use of your personal information for direct marketing purposes or request its portability.",
+    "subtitle_8": "Cookies",
+    "description_8": "We do not use cookies on our website.",
+    "subtitle_9": "Data Protection Officer",
+    "description_9": "We have not appointed a Data Protection Officer as we do not regularly process data on a large scale or collect sensitive data.",
+    "subtitle_10": "Contact",
+    "description_10": "If you have any questions or concerns about our privacy policy or our use of your personal information, please contact us via our contact form."
   }
 }

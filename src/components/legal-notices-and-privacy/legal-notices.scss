@@ -1,7 +1,11 @@
-@import "/src/theme/assets/mixins";
+@import "@/theme/assets/mixins";
 
-#legal_notices {
-  margin: $xxl-spacing 0 $xxl-spacing 0;
+#legal_notices__privacy {
+  margin-top: $xxl-spacing;
+
+  #privacy {
+    margin-top: 0;
+  }
 
   h1 {
     text-align: center;

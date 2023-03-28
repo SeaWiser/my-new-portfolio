@@ -7,8 +7,8 @@ import 'animate.css';
 import { JackInTheBox } from "react-awesome-reveal";
 import { Fade } from "react-reveal";
 import { t } from "i18next";
-import ME_ABOUT_PNG from '/src/assets/me-about.png';
-import ME_ABOUT_WEBP from "/src/assets/me-about.webp";
+import ME_ABOUT_PNG from '@/assets/me-about.png';
+import ME_ABOUT_WEBP from "@/assets/me-about.webp";
 import { Blurhash } from "react-blurhash";
 
 function About() {

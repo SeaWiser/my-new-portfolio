@@ -1,4 +1,4 @@
-@import "/src/theme/assets/mixins";
+@import "@/theme/assets/mixins";
 
 #contact {
   .container.contact__container {
@@ -39,51 +39,6 @@
     font-size: 0.8rem;
   }
 
-  /* --------------- FORM --------------- */
-
-  form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.2rem;
-  }
-
-  input,
-  textarea {
-    width: 100%;
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    background: transparent;
-    font-family: "Poppins", sans-serif;
-    font-size: 0.81rem;
-    border: 2px solid $color-primary-variant;
-    resize: none;
-    color: $color-white;
-  }
-
-  textarea {
-    vertical-align: top;
-  }
-
-  button[disabled] {
-    opacity: 0.5 !important;
-    cursor: not-allowed;
-    pointer-events: none;
-  }
-
-  .form-group {
-    display: flex;
-    flex-direction: column;
-  }
-
-  .has-error {
-    border: 1px solid red;
-    margin-bottom: $xs-spacing;
-  }
-
-  .error-message {
-    color: red;
-  }
-
   /* -------------- FOR OLDER BROWSERS -------------- */
 
   @supports not (gap: 1px) {
@@ -118,5 +73,4 @@
       width: $container-width-sm;
     }
   }
-
 }

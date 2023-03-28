@@ -36,15 +36,12 @@
 
 html {
   scroll-behavior: smooth;
-}
-
-::-webkit-scrollbar {
-  display: none;
+  overflow-x: hidden;
 }
 
 body {
   font-family: "Poppins", sans-serif;
-  background: $color-bg url(/src/assets/bg-texture.svg);
+  background: $color-bg url(@/assets/bg-texture.svg);
   color: $color-white;
   line-height: 1.7;
   max-width: 100%;

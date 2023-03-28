@@ -2,10 +2,11 @@ import React from 'react';
 import './footer.scss';
 import { FaFacebook, FaGithub } from "react-icons/fa";
 import { BsLinkedin } from "react-icons/bs";
-import LOGO from "/src/assets/LOGO_Yanis_LightVersion_23.svg";
+import LOGO from "@/assets/LOGO_Yanis_LightVersion_23.svg";
 import { Link } from "react-router-dom";
 import { HashLink } from 'react-router-hash-link';
 import { t } from "i18next";
+import ScrollToTop from "../../utils/ScrollToTop";
 
 function Footer() {
   return (
@@ -32,7 +33,7 @@ function Footer() {
         <a href="https://github.com/SeaWiser" rel="noreferrer" target="_blank"><FaGithub/></a>
       </div>
 
-      <Link to="/legal-notices">{t('footer.legal_notices')}</Link>
+      <ScrollToTop><Link to="/legal-notices">{t('footer.legal_notices')}</Link></ScrollToTop>
 
       <div className="footer__copyright">
         <small>{t('footer.copyrights')}</small>

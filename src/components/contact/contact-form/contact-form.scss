@@ -1,0 +1,79 @@
+@import "@/theme/assets/mixins";
+
+#contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+
+  input, textarea {
+    width: 100%;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    background: transparent;
+    font-family: "Poppins", sans-serif;
+    font-size: 0.81rem;
+    border: 2px solid $color-primary-variant;
+    resize: none;
+    color: $color-white;
+  }
+
+  textarea {
+    vertical-align: top;
+  }
+
+  button[disabled] {
+    opacity: 0.5 !important;
+    cursor: not-allowed;
+    pointer-events: none;
+  }
+
+  .btn-primary {
+    display: grid;
+    grid-template-columns: min-content auto;
+    grid-template-rows: 1fr;
+    align-items: center;
+    grid-template-areas:
+    "loadingSpinner sendMessageText";
+  }
+
+  .loading__spinner {
+    margin-right: 0.5rem;
+    grid-area: loadingSpinner;
+  }
+
+  .send__message__text {
+    grid-area: sendMessageText;
+  }
+
+  .form-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .has-error {
+    border: 1px solid red;
+    margin-bottom: $xs-spacing;
+  }
+
+  .error-message {
+    color: red;
+  }
+
+  .name__confirm, .email__confirm, .message__confirm {
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 0;
+    width: 0;
+    z-index: -1;
+  }
+
+  /* -------------- FOR OLDER BROWSERS -------------- */
+
+  @supports not (gap: 1px) {
+    form > * + * {
+      margin-top: 1.2rem;
+    }
+  }
+}

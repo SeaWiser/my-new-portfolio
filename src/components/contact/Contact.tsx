@@ -1,91 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './contact.scss';
 import { MdOutlineEmail } from "react-icons/md";
 import { RiMessengerLine } from "react-icons/ri";
 import { BsTelephoneOutbound } from "react-icons/bs";
 import { JackInTheBox } from "react-awesome-reveal";
 import { Fade } from "react-reveal";
-import { useForm } from "react-hook-form";
-import { Form } from "../../models/contact-form/form";
-import { toast } from "react-hot-toast";
-import emailjs from 'emailjs-com';
 import { t } from "i18next";
+import ContactForm from "./contact-form/ContactForm";
 
 function Contact() {
-  const WAIT_TIME = 120000;
-  const NAME_MIN_LENGTH = 2;
-  const NAME_MAX_LENGTH = 50;
-  const EMAIL_MAX_LENGTH = 100;
-  const MESSAGE_MIN_LENGTH = 10;
-  const MESSAGE_MAX_LENGTH = 400;
-  const EMAIL_PATTERN = /^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/;
-
-  let countdownInterval: number | null = null;
-  const [lastMessageSentTime, setLastMessageSentTime] = useState(0);
-  const [timeLeft, setTimeLeft] = useState(0);
-
-  function startCountdown() {
-    countdownInterval = setInterval(() => {
-      if (timeLeft === 0) {
-        stopCountdown();
-      }
-    }, 1000); // Met à jour l'état toutes les secondes
-  }
-
-  function stopCountdown() {
-    if (countdownInterval) {
-      clearInterval(countdownInterval); // Arrête l'interval
-      countdownInterval = null; // Réinitialise la propriété
-      setTimeLeft(0);
-    }
-  }
-
-  const {
-    register,
-    handleSubmit,
-    formState: {
-      errors,
-      isSubmitting,
-      isDirty,
-      isValid,
-    },
-    reset
-  } = useForm({
-    mode: "onChange",
-    defaultValues: {
-      "name": "",
-      "email": "",
-      "message": ""
-    }
-  });
-
-  function onSubmit(data: Form) {
-    const currentTime = new Date().getTime();
-    const timeSinceLastMessage = currentTime - lastMessageSentTime;
-    const dataForm = {
-      name: data.name,
-      email: data.email,
-      message: data.message,
-    }
-
-    if (timeSinceLastMessage > WAIT_TIME) {
-      emailjs.send('service_gvxffb2', 'template_0nry3wu', dataForm, 'UPSI5R6e0J5PWUXl5').then(
-        () => {
-          toast.success(t('contact.success_message'));
-          reset();
-          setLastMessageSentTime(currentTime);
-          setTimeLeft(WAIT_TIME);
-          startCountdown(); // Démarre le compte à rebours
-        },
-        (error: { text: string; }) => {
-          console.log(error.text);
-        }
-      );
-    } else {
-      toast.error(t('contact.error_message', {seconds: Math.ceil((WAIT_TIME - timeSinceLastMessage) / 1000)}));
-    }
-  }
-
   return (
     <section id="contact">
       <Fade left>
@@ -118,90 +41,7 @@ function Contact() {
             </article>
           </JackInTheBox>
         </div>
-        <form onSubmit={handleSubmit(onSubmit)}>
-          <Fade top>
-            <div className="form-group">
-              <label>
-                <input
-                  {...register("name", {
-                    required: t('contact.form_full_name') + t('contact.errors.required'),
-                    minLength: {
-                      value: NAME_MIN_LENGTH,
-                      message: t('contact.form_full_name') + t('contact.errors.too_short', {minLength: NAME_MIN_LENGTH})
-                    },
-                    maxLength: {
-                      value: NAME_MAX_LENGTH,
-                      message: t('contact.form_full_name') + t('contact.errors.too_long', {maxLength: NAME_MAX_LENGTH})
-                    },
-                  })}
-                  className={errors["name"] && "has-error"}
-                  aria-invalid={errors["name"] ? "true" : "false"}
-                  type="text"
-                  placeholder={t('contact.form_full_name')}
-                />
-                <Fade bottom>
-                  {errors["name"] && <span className="error-message" role="alert">{errors["name"]?.message}</span>}
-                </Fade>
-              </label>
-            </div>
-          </Fade>
-          <Fade right>
-            <div className="form-group">
-              <label>
-                <input
-                  {...register("email", {
-                    required: t('contact.form_email') + t('contact.errors.required'),
-                    maxLength: {
-                      value: EMAIL_MAX_LENGTH,
-                      message: t('contact.form_email') + t('contact.errors.too_long', {maxLength: EMAIL_MAX_LENGTH})
-                    },
-                    pattern: {
-                      value: EMAIL_PATTERN,
-                      message: t('contact.form_email') + t('contact.errors.invalid')
-                    },
-                  })}
-                  className={errors["email"] && "has-error"}
-                  aria-invalid={errors["email"] ? "true" : "false"}
-                  type="email"
-                  placeholder={t('contact.form_email')}
-                />
-                <Fade bottom>
-                  {errors["email"] && <span className="error-message" role="alert">{errors["email"]?.message}</span>}
-                </Fade>
-              </label>
-            </div>
-          </Fade>
-          <Fade bottom>
-            <div className="form-group">
-              <label>
-                <textarea rows={7}
-                          {...register("message", {
-                            required: t('contact.form_message') + t('contact.errors.required'),
-                            minLength: {
-                              value: MESSAGE_MIN_LENGTH,
-                              message: t('contact.form_message') + t('contact.errors.too_short', {minLength: MESSAGE_MIN_LENGTH})
-                            },
-                            maxLength: {
-                              value: MESSAGE_MAX_LENGTH,
-                              message: t('contact.form_message') + t('contact.errors.too_long', {maxLength: MESSAGE_MAX_LENGTH})
-                            },
-                          })}
-                          className={errors["message"] && "has-error"}
-                          aria-invalid={errors["message"] ? "true" : "false"}
-                          placeholder={t('contact.form_message')}
-                />
-                <Fade bottom>
-                  {errors["message"] &&
-                    <span className="error-message" role="alert">{errors["message"]?.message}</span>}
-                </Fade>
-              </label>
-            </div>
-          </Fade>
-          <Fade bottom big>
-            <button type="submit" className="btn btn-primary"
-                    disabled={!isDirty || !isValid || isSubmitting}>{t('contact.send_message')}</button>
-          </Fade>
-        </form>
+        <ContactForm/>
       </div>
     </section>
   );

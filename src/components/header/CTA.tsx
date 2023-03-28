@@ -1,6 +1,6 @@
 import React from 'react';
-import CV_FR from '/src/assets/cv_fr.pdf';
-import CV_EN from '/src/assets/cv_en.pdf';
+import CV_FR from '@/assets/cv_fr.pdf';
+import CV_EN from '@/assets/cv_en.pdf';
 import 'animate.css';
 import { Fade } from "react-reveal";
 import { t } from "i18next";

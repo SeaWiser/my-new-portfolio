@@ -1,4 +1,4 @@
-@import "/src/theme/assets/mixins";
+@import "@/theme/assets/mixins";
 
 #home {
   padding-top: $xxl-spacing;
@@ -23,6 +23,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     gap: $md-spacing;
   }
 
