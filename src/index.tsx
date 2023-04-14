@@ -7,7 +7,7 @@ import ErrorPage from "./error-page";
 import axios from 'axios';
 import LegalNotices from "./components/legal-notices-and-privacy/LegalNotices";
 
-axios.defaults.baseURL = 'http://localhost:8000'; // Remplacez par l'URL de votre API Rest
+axios.defaults.baseURL = 'https://api.ygraillot.com'; // Remplacez par l'URL de votre API Rest
 axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 const router = createBrowserRouter([
